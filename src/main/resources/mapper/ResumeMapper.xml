@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.ResumeMapper">
+
+    <select id="selectResumeById" resultMap="resumeResultMap" parameterType="int">
+        select * from resume where resume_id = #{id} limit 1
+    </select>
+
+    <select id="selectResumesByJobHunterId" resultMap="jobHunterResumeResultMap" parameterType="int">
+        select * from resume where job_hunter_id = #{job_hunter_id}
+    </select>
+    <select id="selectResumesByPositionId" resultMap="positionResumeResultMap" parameterType="int">
+        select * from resume where position_id = #{position_id}
+    </select>
+
+    <update id="updateResumeStateByJobHunterIdAndPositionId" >
+        update resume set resume_state=#{resume_state} where job_hunter_id = #{job_hunter_id} and position_id = #{position_id}
+    </update>
+    <insert id="insertResume">
+        insert resume(resume_name,resume_education,resume_age,resume_advantage,resume_expected_city,
+        resume_expected_position,resume_expected_salary,resume_work_address,resume_work_experience,resume_project_experience,
+        resume_social_homepage,resume_volunteer_service_experience,resume_enclosure,resume_reject_reason,
+        resume_created_time,resume_updated_time,resume_delivered_time,resume_state)
+        values(#{resume_name},#{resume_education},#{resume_age},#{resume_advantage},#{resume_expected_city},
+        #{resume_expected_position},#{resume_expected_salary},#{resume_work_address},#{resume_work_experience},#{resume_project_experience},
+        #{resume_social_homepage},#{resume_volunteer_service_experience},#{resume_enclosure},#{resume_reject_reason},
+        #{resume_created_time},#{resume_updated_time},#{resume_delivered_time},#{resume_state})
+
+    </insert>
+    <delete id="deleteResume" parameterType="int">
+        delete from resume where resume_id=#{resume_id}
+    </delete>
+    <update id="updateResumeNameById">
+        update resume set resume_id=#{resume_id},resume_name=#{resume_name} where  resume_id=#{resume_id}
+    </update>
+
+    <resultMap id="jobHunterResumeResultMap" type="Resume">
+        <id property="id" column="resume_id"/>
+        <result property="name" column="resume_name"/>
+        <result property="education" column="resume_education"/>
+        <result property="age" column="resume_age"/>
+        <result property="advantage" column="resume_advantage"/>
+        <result property="expectedCity" column="resume_expected_city"/>
+        <result property="expectedPosition" column="resume_expected_position"/>
+        <result property="workAddress" column="resume_work_address"/>
+        <result property="expectedSalary" column="resume_expected_salary"/>
+        <result property="workExperience" column="resume_work_experience"/>
+        <result property="projectExperience" column="resume_project_experience"/>
+        <result property="socialHomepage" column="resume_social_homepage"/>
+        <result property="volunteerServiceExperience" column="resume_volunteer_service_experience"/>
+        <result property="enclosure" column="resume_enclosure"/>
+        <result property="rejectReason" column="resume_reject_reason"/>
+        <result property="createdTime" column="resume_created_time"/>
+        <result property="updatedTime" column="resume_updated_time"/>
+        <result property="deliveredTime" column="resume_delivered_time"/>
+        <result property="state" column="resume_state"/>
+        <association property="position" column="position_id" select="org.lieying.dao.PositionMapper.selectPositionById"/>
+        <collection property="credentials" column="resume_id"
+                    select="org.lieying.dao.CredentialMapper.selectCredentialsByResumeId"/>
+        <collection property="educationExperiences" column="resume_id"
+                    select="org.lieying.dao.EducationExperienceMapper.selectEducationExperiencesByResumeId"/>
+        <collection property="volunteerExperiences" column="resume_id"
+                    select="org.lieying.dao.VolunteerExperienceMapper.selectVolunteerExperiencesByResumeId"/>
+        <collection property="internshipExperiences" column="resume_id"
+                    select="org.lieying.dao.InternshipExperienceMapper.selectInternshipExperiencesByResumeId"/>
+        <collection property="projectExperiences" column="resume_id"
+                    select="org.lieying.dao.ProjectExperienceMapper.selectProjectExperiencesByResumeId"/>
+    </resultMap>
+
+    <resultMap id="positionResumeResultMap" type="Resume">
+        <id property="id" column="resume_id"/>
+        <result property="name" column="resume_name"/>
+        <result property="education" column="resume_education"/>
+        <result property="age" column="resume_age"/>
+        <result property="advantage" column="resume_advantage"/>
+        <result property="expectedCity" column="resume_expected_city"/>
+        <result property="expectedPosition" column="resume_expected_position"/>
+        <result property="workAddress" column="resume_work_address"/>
+        <result property="expectedSalary" column="resume_expected_salary"/>
+        <result property="workExperience" column="resume_work_experience"/>
+        <result property="projectExperience" column="resume_project_experience"/>
+        <result property="socialHomepage" column="resume_social_homepage"/>
+        <result property="volunteerServiceExperience" column="resume_volunteer_service_experience"/>
+        <result property="enclosure" column="resume_enclosure"/>
+        <result property="rejectReason" column="resume_reject_reason"/>
+        <result property="createdTime" column="resume_created_time"/>
+        <result property="updatedTime" column="resume_updated_time"/>
+        <result property="deliveredTime" column="resume_delivered_time"/>
+        <result property="state" column="resume_state"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+        <collection property="credentials" column="resume_id"
+                    select="org.lieying.dao.CredentialMapper.selectCredentialsByResumeId"/>
+        <collection property="educationExperiences" column="resume_id"
+                    select="org.lieying.dao.EducationExperienceMapper.selectEducationExperiencesByResumeId"/>
+        <collection property="volunteerExperiences" column="resume_id"
+                    select="org.lieying.dao.VolunteerExperienceMapper.selectVolunteerExperiencesByResumeId"/>
+        <collection property="internshipExperiences" column="resume_id"
+                    select="org.lieying.dao.InternshipExperienceMapper.selectInternshipExperiencesByResumeId"/>
+        <collection property="projectExperiences" column="resume_id"
+                    select="org.lieying.dao.ProjectExperienceMapper.selectProjectExperiencesByResumeId"/>
+    </resultMap>
+    <resultMap id="resumeResultMap" type="Resume">
+        <id property="id" column="resume_id"/>
+        <result property="name" column="resume_name"/>
+        <result property="education" column="resume_education"/>
+        <result property="age" column="resume_age"/>
+        <result property="advantage" column="resume_advantage"/>
+        <result property="expectedCity" column="resume_expected_city"/>
+        <result property="expectedPosition" column="resume_expected_position"/>
+        <result property="workAddress" column="resume_work_address"/>
+        <result property="expectedSalary" column="resume_expected_salary"/>
+        <result property="workExperience" column="resume_work_experience"/>
+        <result property="projectExperience" column="resume_project_experience"/>
+        <result property="socialHomepage" column="resume_social_homepage"/>
+        <result property="volunteerServiceExperience" column="resume_volunteer_service_experience"/>
+        <result property="enclosure" column="resume_enclosure"/>
+        <result property="rejectReason" column="resume_reject_reason"/>
+        <result property="createdTime" column="resume_created_time"/>
+        <result property="updatedTime" column="resume_updated_time"/>
+        <result property="deliveredTime" column="resume_delivered_time"/>
+        <result property="state" column="resume_state"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+        <association property="position" column="position_id" select="org.lieying.dao.PositionMapper.selectPositionById"/>
+        <collection property="credentials" column="resume_id"
+                    select="org.lieying.dao.CredentialMapper.selectCredentialsByResumeId"/>
+        <collection property="educationExperiences" column="resume_id"
+                    select="org.lieying.dao.EducationExperienceMapper.selectEducationExperiencesByResumeId"/>
+        <collection property="volunteerExperiences" column="resume_id"
+                    select="org.lieying.dao.VolunteerExperienceMapper.selectVolunteerExperiencesByResumeId"/>
+        <collection property="internshipExperiences" column="resume_id"
+                    select="org.lieying.dao.InternshipExperienceMapper.selectInternshipExperiencesByResumeId"/>
+        <collection property="projectExperiences" column="resume_id"
+                    select="org.lieying.dao.ProjectExperienceMapper.selectProjectExperiencesByResumeId"/>
+
+    </resultMap>
+</mapper>

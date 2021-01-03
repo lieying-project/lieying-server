@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.CompanyPictureMapper">
+    <select id="selectCompanyPicturesByCompanyId" parameterType="Integer" resultMap="companyPictureResultMap">
+        select *
+         from company_picture where company_id = #{id}
+    </select>
+    <resultMap id="companyPictureResultMap" type="CompanyPicture">
+        <id property="id" column="company_picture_id"/>
+        <result property="name" column="company_picture_name"/>
+        <result property="path" column="company_picture_path"/>
+    </resultMap>
+</mapper>

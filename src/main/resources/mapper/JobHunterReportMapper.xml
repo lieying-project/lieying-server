@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.JobHunterReportMapper">
+    <select id="selectJobHunterReportById" resultMap="jobHunterReportPositionResultMap" parameterType="int">
+        select * from job_hunter_report where job_hunter_report_id = #{job_hunter_report_id} limit 1
+    </select>
+
+    <select id="selectJobHunterReportByJobHunterIdAndPositionId" resultMap="jobHunterReportPositionResultMap">
+        select * from job_hunter_report where job_hunter_id=#{job_hunter_id} and position_id = #{position_id} limit 1
+    </select>
+
+    <select id="selectJobHunterReportsByPositionId" resultMap="positionReportResultMap" parameterType="int">
+        select * from job_hunter_report where position_id = #{id}
+    </select>
+    <select id="selectJobHunterReportsByJobHunterId" resultMap="jobHunterReportResultMap" parameterType="int">
+        select * from job_hunter_report where job_hunter_id = #{id}
+    </select>
+
+    <update id="updateJobHunterReport" >
+        update job_hunter_report
+        set job_hunter_report_reason=#{job_hunter_report_reason},job_hunter_report_footnote=#{job_hunter_report_footnote},
+        job_hunter_report_evidence_screen_shot=#{job_hunter_report_evidence_screen_shot} where job_hunter_id =#{job_hunter_id} and
+        position_id=#{position_id}
+    </update>
+    <insert id="insertJobHunterReport">
+        insert job_hunter_report(job_hunter_report_reason,job_hunter_report_footnote,job_hunter_report_evidence_screen_shot,job_hunter_id,position_id)
+         values(#{job_hunter_report_reason},#{job_hunter_report_footnote},#{job_hunter_report_evidence_screen_shot},#{job_hunter_id},#{position_id})
+    </insert>
+    <resultMap id="jobHunterReportPositionResultMap" type="JobHunterReport">
+        <id property="id" column="job_hunter_report_id"/>
+        <result property="reason" column="job_hunter_report_reason"/>
+        <result property="footnote" column="job_hunter_report_footnote"/>
+        <result property="evidenceScreenShot" column="job_hunter_report_evidence_screen_shot"/>
+        <result property="createTime" column="job_hunter_report_created_time"/>
+        <association property="jobHunter" column="job_hunter_id"
+                     select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+        <association property="position" column="position_id"
+                     select="org.lieying.dao.PositionMapper.selectPositionById"/>
+    </resultMap>
+    <resultMap id="positionReportResultMap" type="JobHunterReport">
+        <id property="id" column="job_hunter_report_id"/>
+        <result property="reason" column="job_hunter_report_reason"/>
+        <result property="footnote" column="job_hunter_report_footnote"/>
+        <result property="evidenceScreenShot" column="job_hunter_report_evidence_screen_shot"/>
+        <result property="createTime" column="job_hunter_report_created_time"/>
+        <association property="jobHunter" column="job_hunter_id"
+                     select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+
+    </resultMap>
+
+    <resultMap id="jobHunterReportResultMap" type="JobHunterReport">
+        <id property="id" column="job_hunter_report_id"/>
+        <result property="reason" column="job_hunter_report_reason"/>
+
+        <result property="footnote" column="job_hunter_report_footnote"/>
+        <result property="evidenceScreenShot" column="job_hunter_report_evidence_screen_shot"/>
+        <result property="createTime" column="job_hunter_report_created_time"/>
+        <association property="position" column="position_id"
+                     select="org.lieying.dao.PositionMapper.selectPositionById"/>
+
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.PositionMapper">
+
+    <!--按照投递简历多少查询职位-->
+    <select id="selectHotPositionsByCriteria" resultMap="positionDetailResultMap" >
+        select *
+         from resume r,position p
+          where p.position_id =r.position_id and p.city_id = #{city_id} and position_category_id   in
+           (select position_category_id from position_category where father_position_category_id = #{position_category_id})
+         group by r.position_id order by count(r.position_id) desc
+    </select>
+    <!--   select position_id as id,position_name as name from position where position_category_id = #{position_category_id}-->
+    <sql id="positionShortInfo">position_id as id,position_name as name</sql>
+    <select id="selectPositionsByPositionCategoryId" resultType="Position" parameterType="int">
+        select
+        <include refid="positionShortInfo"/>
+        from position where position_category_id = #{position_category_id}
+    </select>
+    <select id="selectPositionsByCompanyId" resultMap="positionResultMap" parameterType="int">
+        select * from position where company_id = #{company_id}
+    </select>
+    <select id="selectPositionsByRecruiterId" resultMap="positionResultMap" parameterType="int">
+        select * from position where recruiter_id = #{recruiter_id}
+    </select>
+    <select id="selectPositionById" resultMap="positionResultMap" parameterType="int">
+        select * from position where  position_id = #{id}
+    </select>
+    <select id="selectDetailPositionById" resultMap="positionDetailResultMap" parameterType="int">
+        select * from position where  position_id = #{id}
+    </select>
+
+    <select id="selectBrowsedPositionsByJobHunterId" parameterType="int" resultMap="positionDetailResultMap">
+        select * from position where position_id in (select distinct(position_id) from position_browse where job_hunter_id=#{job_hunter_id});
+    </select>
+    <select id="selectPositionsByCriteria" resultMap="positionDetailResultMap">
+        select * from position where 1=1
+        -- where position_name like '%${keyword}%'
+        <if test="keyword!=null">
+            <bind name="positionName" value="'%'+keyword+'%'"/>
+            and position_name like #{positionName}
+        </if>
+        <if test="city_id!=null">
+            and city_id = #{city_id,jdbcType=INTEGER}
+        </if>
+        <if test="position_category_id!=null">
+            and position_category_id=#{position_category_id,jdbcType=INTEGER}
+        </if>
+        <if test="industry_id!=null">
+            and company_id in (select company_id from company where industry_id = #{industry_id,jdbcType=INTEGER} )
+        </if>
+        <if test="position_education!=null">
+            and position_education = #{position_education,jdbcType=VARCHAR}
+        </if>
+        <if test="position_experience!=null">
+            and position_experience = #{position_experience,jdbcType=VARCHAR}
+        </if>
+        <if test="position_salary!=null">
+            and position_salary = #{position_salary,jdbcType=VARCHAR}
+        </if>
+        <if test="financing_stage_id!=null">
+            and company_id in (select company_id from company where financing_stage_id=#{financing_stage_id,jdbcType=INTEGER} )
+        </if>
+        <if test="position_publish_time!=null">
+            and position_publish_time=#{position_publish_time,jdbcType=DATE}
+        </if>
+    </select>
+    <resultMap id="positionResultMap" type="Position">
+        <id property="id" column="position_id"/>
+        <result property="name" column="position_name"/>
+        <result property="salary" column="position_salary"/>
+        <result property="address" column="position_address"/>
+        <result property="education" column="position_education"/>
+        <result property="experience" column="position_experience"/>
+        <result property="detail" column="position_detail"/>
+        <result property="publishTime" column="position_publish_time"/>
+    </resultMap>
+    <resultMap id="positionDetailResultMap" type="Position">
+        <id property="id" column="position_id"/>
+        <result property="name" column="position_name"/>
+        <result property="salary" column="position_salary"/>
+        <result property="address" column="position_address"/>
+        <result property="education" column="position_education"/>
+        <result property="experience" column="position_experience"/>
+        <result property="detail" column="position_detail"/>
+        <result property="publishTime" column="position_publish_time"/>
+        <association property="company" column="company_id" select="org.lieying.dao.CompanyMapper.selectCompanyById"/>
+        <association property="recruiter" column="recruiter_id"
+                     select="org.lieying.dao.RecruiterMapper.selectRecruiterById"/>
+        <association property="positionCategory" column="position_category_id"
+                     select="org.lieying.dao.PositionCategoryMapper.selectPositionCategoryById"/>
+        <association property="province" column="province_id"
+                     select="org.lieying.dao.ProvinceMapper.selectProvinceById"/>
+        <association property="city" column="city_id" select="org.lieying.dao.CityMapper.selectCityById"/>
+        <association property="district" column="district_id"
+                     select="org.lieying.dao.DistrictMapper.selectDistrictById"/>
+        <collection property="positionCollects" column="position_id"
+                    select="org.lieying.dao.PositionCollectMapper.selectPositionCollectsByPositionId"/>
+        <collection property="positionBrowses" column="position_id"
+                    select="org.lieying.dao.PositionBrowseMapper.selectPositionBrowsesByPositionId"/>
+        <collection property="resumes" column="position_id"
+                    select="org.lieying.dao.ResumeMapper.selectResumesByPositionId"/>
+        <collection property="jobHunterReports" column="position_id"
+                    select="org.lieying.dao.JobHunterReportMapper.selectJobHunterReportsByPositionId"/>
+    </resultMap>
+
+    <insert id="insertPosition" parameterType="Position">
+        insert into position
+        (position_name,position_salary,position_address,position_education,
+        position_experience,position_detail,position_publish_time,recruiter_id)
+        values(#{position.name},#{position.salary},#{position.address},#{position.education},
+        #{position.experience},#{position.detail},#{position.publishTime},#{recruiterId})
+    </insert>
+</mapper>
