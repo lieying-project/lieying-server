@@ -14,7 +14,6 @@ public class TestSpring {
 
         ApplicationContext applicationContext=new FileSystemXmlApplicationContext("E:\\project\\java\\lieying\\src\\main\\resources\\applicationContext.xml");
 
-
         ChatService chatService= (ChatService) applicationContext.getBean("chatService");
         System.out.println(chatService.findChatsByJobHunterIdAndRecruiterId(1,1));
 

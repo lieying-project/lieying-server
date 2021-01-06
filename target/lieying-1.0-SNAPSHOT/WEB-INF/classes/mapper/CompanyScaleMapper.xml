@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.CompanyScaleMapper">
+
+
+    <select id="selectCompanyScaleById" resultMap="companyScaleResultMap" parameterType="int">
+        select * from company_scale where company_scale_id =#{company_scale_id}
+    </select>
+    <select id="selectAllCompanyScales" resultMap="companyScaleResultMap">
+        select * from company_scale
+    </select>
+    <resultMap id="companyScaleResultMap" type="CompanyScale">
+        <id property="id" column="company_scale_id"/>
+        <result property="name" column="company_scale_name"/>
+
+<!--        @OneToMany(mappedBy = "companyScale")-->
+<!--        private Set<Company> companies;-->
+    </resultMap>
+</mapper>

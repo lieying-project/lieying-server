@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.InternshipExperienceMapper">
+    <select id="selectInternshipExperiencesByResumeId" resultMap="internshipExperienceResultMap" parameterType="int">
+        select *
+        from internship_experience
+        where resume_id = #{id}
+    </select>
+    <insert id="insertInternshipExperience">
+        insert into internship_experience(internship_experience_company, internship_experience_department,
+                                          internship_experience_position_category, internship_experience_industry,
+                                          internship_experience_technology, internship_experience_position_name,
+                                          internship_experience_start_time, internship_experience_end_time,
+                                          internship_experience_job_content, internship_experience_job_performance,
+                                          resume_id)
+        values(#{internship_experience_company},#{internship_experience_department},
+               #{internship_experience_position_category},#{internship_experience_industry},
+               #{internship_experience_technology},#{internship_experience_position_name},
+               #{internship_experience_start_time},#{internship_experience_end_time},
+               #{internship_experience_job_content},#{internship_experience_job_performance},#{resume_id})
+    </insert>
+
+    <resultMap id="internshipExperienceResultMap" type="InternshipExperience">
+        <id property="id" column="internship_experience_id"/>
+        <result property="company" column="internship_experience_company"/>
+        <result property="department" column="internship_experience_department"/>
+        <result property="industry" column="internship_experience_industry"/>
+        <result property="positionCategory" column="internship_experience_position_category"/>
+        <result property="technology" column="internship_experience_technology"/>
+        <result property="positionName" column="internship_experience_position_name"/>
+        <result property="startTime" column="internship_experience_start_time"/>
+        <result property="endTime" column="internship_experience_end_time"/>
+        <result property="jobContent" column="internship_experience_job_content"/>
+        <result property="jobPerformance" column="internship_experience_job_performance"/>
+    </resultMap>
+
+
+</mapper>

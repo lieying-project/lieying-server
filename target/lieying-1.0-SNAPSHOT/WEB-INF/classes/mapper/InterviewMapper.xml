@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.InterviewMapper">
+
+    <select id="selectInterviewsByJobHunterId" parameterType="int" resultMap="jobHunterInterviewResultMap">
+        select * from interview where job_hunter_id =#{job_hunter_id}
+    </select>
+
+    <select id="selectInterviewsByRecruiterId" parameterType="int" resultMap="recruiterInterviewResultMap">
+        select * from interview where recruiter_id = #{recruiter_id}
+    </select>
+
+    <resultMap id="jobHunterInterviewResultMap" type="Interview">
+        <id property="id" column="interview_id"/>
+        <result property="startTime" column="interview_start_time"/>
+        <result property="endTime" column="interview_end_time"/>
+        <association property="recruiter" column="recruiter_id"
+                     select="org.lieying.dao.RecruiterMapper.selectRecruiterById"/>
+    </resultMap>
+    <resultMap id="recruiterInterviewResultMap" type="Interview">
+        <id property="id" column="interview_id"/>
+        <result property="startTime" column="interview_start_time"/>
+        <result property="endTime" column="interview_end_time"/>
+        <association property="jobHunter" column="job_hunter_id"
+                     select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+
+    </resultMap>
+</mapper>

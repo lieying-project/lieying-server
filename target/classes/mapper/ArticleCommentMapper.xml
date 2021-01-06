@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.ArticleCommentMapper">
+    <select id="selectArticleCommentById" resultMap="articleCommentResultMap" parameterType="int">
+        select * from article_comment where article_comment_id = #{article_comment_id} limit 1
+    </select>
+    <select id="selectArticleCommentsByArticleId" resultMap="articleCommentResultMap" parameterType="int">
+        select * from article_comment where article_id = #{id}  order by article_comment_created_time desc
+    </select>
+    <select id="selectArticleCommentsByJobHunterId" resultMap="jobHunterCommentResultMap" parameterType="int">
+        select * from article_comment where job_hunter_id = #{id}
+    </select>
+    <insert id="insertArticleComment">
+        insert into article_comment(article_comment_content,article_comment_created_time,job_hunter_id,article_id)
+        values(#{article_comment_content},#{article_comment_created_time},#{job_hunter_id},#{article_id})
+    </insert>
+
+
+
+    <resultMap id="articleCommentResultMap" type="ArticleComment">
+        <id property="id" column="article_comment_id"/>
+        <result property="content" column="article_comment_content"/>
+        <result property="createdTime" column="article_comment_created_time"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+        <collection property="articleCommentRelies" column="article_comment_id"
+                    select="org.lieying.dao.ArticleCommentRelyMapper.selectArticleCommentReliesByArticleCommentId"/>
+        <!--        @ManyToOne(targetEntity=Article.class)-->
+        <!--        @JoinColumn(name="article_id")-->
+        <!--        private Article article;-->
+        <!--        @ManyToOne(targetEntity=JobHunter.class)-->
+        <!--        @JoinColumn(name="job_hunter_id")-->
+        <!--        private JobHunter jobHunter;-->
+    </resultMap>
+    <resultMap id="jobHunterCommentResultMap" type="ArticleComment">
+        <id property="id" column="article_comment_id"/>
+        <result property="content" column="article_comment_content"/>
+        <result property="createdTime" column="article_comment_created_time"/>
+        <association property="article" column="article_id" select="org.lieying.dao.ArticleMapper.selectArticleById"/>
+    </resultMap>
+</mapper>

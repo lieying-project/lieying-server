@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.ResourceMapper">
+
+    <select id="selectDetailResourceById" parameterType="int" resultMap="resourceDetailResultMap">
+        select * from resource where resource_id = #{resource_id} limit 1
+    </select>
+    <select id="selectResourceById" parameterType="int" resultMap="resourceResultMap">
+      select * from resource where resource_id = #{resource_id} limit 1
+    </select>
+
+
+    <select id="selectResourcesByAdministratorId" parameterType="int" resultMap="resourceResultMap">
+      select * from resource where administrator_id = #{administrator_id}
+    </select>
+
+    <resultMap id="resourceResultMap" type="Resource">
+        <id property="id" column="resource_id"/>
+        <result property="name" column="resource_name"/>
+        <result property="type" column="resource_type"/>
+        <result property="path" column="resource_path"/>
+        <result property="cover" column="resource_cover"/>
+
+    </resultMap>
+    <resultMap id="resourceDetailResultMap" type="Resource">
+        <id property="id" column="resource_id"/>
+        <result property="name" column="resource_name"/>
+        <result property="type" column="resource_type"/>
+        <result property="path" column="resource_path"/>
+        <result property="cover" column="resource_cover"/>
+        <association property="administrator" column="administrator_id"
+        select="org.lieying.dao.AdministratorMapper.selectAdministratorById"/>
+        <collection property="jobHunterOrders" column="resource_id" select="org.lieying.dao.JobHunterOrderMapper.selectJobHunterOrdersByResourceId"/>
+    </resultMap>
+</mapper>

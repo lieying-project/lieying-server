@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.ProvinceMapper">
+
+
+    <select id="selectProvinceById" resultMap="provinceResultMap" parameterType="int">
+        select * from province where province_id = #{id}
+    </select>
+    <resultMap id="provinceResultMap" type="Province">
+
+        <id  property="id" column="province_id"/>
+        <result  property="name" column="province_name"/>
+
+<!--        @OneToMany(mappedBy="province")-->
+<!--        private Set<City> cities;-->
+<!--        @OneToMany(mappedBy = "province")-->
+<!--        private Set<Position> positions;-->
+    </resultMap>
+</mapper>

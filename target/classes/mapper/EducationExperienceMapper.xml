@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.EducationExperienceMapper">
+
+
+    <select id="selectEducationExperiencesByResumeId" resultMap="educationExperienceResultMap" parameterType="int">
+        select * from education_experience where resume_id = #{id}
+    </select>
+    <resultMap id="educationExperienceResultMap" type="EducationExperience">
+        <id property="id" column="education_experience_id"/>
+        <result property="school" column="education_experience_school"/>
+        <result property="profession" column="education_experience_profession"/>
+        <result property="timeQuantum" column="education_experience_time_quantum"/>
+        <result property="stage" column="education_experience_stage"/>
+    </resultMap>
+</mapper>

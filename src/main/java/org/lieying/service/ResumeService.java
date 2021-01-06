@@ -11,7 +11,7 @@ public interface ResumeService {
 
     Resume queryResumeById(int resumeId);
 
-    Boolean modifyResumeState(Resume resume);
+    Boolean modifyResume(Resume resume);
 
     Boolean addResume(String name,
                       String education,

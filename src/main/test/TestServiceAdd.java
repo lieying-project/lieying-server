@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.lieying.bean.Administrator;
 import org.lieying.bean.Information;
 import org.lieying.service.*;
+import org.lieying.service.impl.PositionServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import java.util.Date;
@@ -17,6 +18,7 @@ public class TestServiceAdd {
     private JobHunterService jobHunterService;
     private RecruiterService recruiterService;
     private InformationService informationService;
+    private PositionService positionService;
     @BeforeEach
     void setUp() {
         applicationContext=new FileSystemXmlApplicationContext("classpath:applicationContext.xml");
@@ -28,6 +30,7 @@ public class TestServiceAdd {
         jobHunterService=(JobHunterService)applicationContext.getBean("jobHunterServiceImpl");
         recruiterService=(RecruiterService)applicationContext.getBean("recruiterServiceImpl");
         informationService=(InformationService)applicationContext.getBean("informationServiceImpl");
+        positionService=(PositionServiceImpl)applicationContext.getBean("positionServiceImpl");
         System.out.println(resumeService);
         System.out.println(credentialService);
         System.out.println(internshipExperienceService);
@@ -36,6 +39,7 @@ public class TestServiceAdd {
         System.out.println(recruiterService);
         System.out.println(volunteerExperienceService);
         System.out.println(informationService);
+        System.out.println(positionService);
     }
     @Test
     public void testAddCredential(){
@@ -107,4 +111,9 @@ public class TestServiceAdd {
         System.out.println(informationService.addInformation(information));
     }
 
+
+    @Test
+    public void testAddPosition(){
+
+    }
 }
