@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.CompanyMapper">
+    <sql id="hotCompanies">select count(*),company_id from position group by company_id order by count(*) desc;</sql>
+    <select id="selectCompanyById" parameterType="Integer" resultMap="companyResultMap">
+        select *
+         from company where company_id = #{id}
+    </select>
+    <select id="selectCompaniesByCriteria" resultMap="companyResultMap">
+        select * from company where 1=1
+            <if test="city_id!=null"> and city_id = #{city_id}</if>
+        <if test="industry_id!=null"> and industry_id = #{industry_id}</if>
+        <if test="financing_stage_id!=null"> and financing_stage_id = #{financing_stage_id}</if>
+        <if test="company_scale_id!=null"> and company_scale_id = #{company_scale_id}</if>
+    </select>
+    <select id="selectHotCompaniesByCriteria" resultMap="companyResultMap">
+        select  *  from position,company
+        where company.company_id = position.company_id
+        <if test="city_id!=null"> and company.city_id = #{city_id} </if>
+        group by  position.company_id order by count(company.company_id) desc
+
+    </select>
+    <resultMap id="companyResultMap" type="Company">
+        <id property="id" column="company_id"/>
+        <result property="name" column="company_name"/>
+        <result property="address" column="company_address"/>
+        <result property="phone" column="company_phone"/>
+        <result property="intro" column="company_intro"/>
+        <result property="culture" column="company_culture"/>
+        <result property="sign" column="company_sign"/>
+        <result property="license" column="company_license"/>
+        <result property="representative" column="company_representative"/>
+        <result property="established" column="company_established"/>
+        <result property="registerCapital" column="company_register_capital"/>
+        <result property="businessScope" column="company_business_scope"/>
+        <result property="employeeWelfare" column="company_employee_welfare"/>
+        <result property="workTime" column="company_work_time"/>
+        <association property="financingStage" column="financing_stage_id" select="org.lieying.dao.FinancingStageMapper.selectFinancingStageById"/>
+        <association property="companyScale" column="company_scale_id" select="org.lieying.dao.CompanyScaleMapper.selectCompanyScaleById"/>
+        <association property="city" column="city_id" select="org.lieying.dao.CityMapper.selectCityById"/>
+        <association property="industry" column="industry_id" select="org.lieying.dao.IndustryMapper.selectIndustryById"/>
+        <collection property="positions" column="company_id" select="org.lieying.dao.PositionMapper.selectPositionsByCompanyId" />
+        <collection property="recruiters" column="company_id" select="org.lieying.dao.RecruiterMapper.selectRecruitersByCompanyId"/>
+        <collection property="companyPictures" column="company_id" select="org.lieying.dao.CompanyPictureMapper.selectCompanyPicturesByCompanyId"/>
+    </resultMap>
+</mapper>

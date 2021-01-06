@@ -38,7 +38,9 @@ public class PositionServiceImpl implements PositionService {
                                                        String positionSalary,
                                                        String positionExperience,
                                                        Integer financingStageId,
-                                                       String positionPublishTime, Integer page) {
+                                                       String positionPublishTime,
+                                                       Integer recruiterId,
+                                                       Integer page) {
         int pageSize = 2;
         System.out.println("page:" + page + " pageSize:" + pageSize);
         if (page == null) {
@@ -58,23 +60,43 @@ public class PositionServiceImpl implements PositionService {
                         positionSalary,
                         positionExperience,
                         financingStageId,
-                        positionPublishTime);
+                        positionPublishTime,
+                        recruiterId);
         PageInfo<Position> pageInfo = new PageInfo<>(positions);
-        //System.out.println(pageInfo.getSize());
+
         return pageInfo;
     }
 
 
-    @Transactional
     @Override
-    public Boolean addPosition(Position position, Integer recruiterId) {
-        long before = System.currentTimeMillis();
-        int row = positionMapper.insertPosition(position, recruiterId);
-        long after = System.currentTimeMillis();
-//        System.out.println(after - before);
-//        System.out.println(position.getId());
-        return row > 0;
+    public Boolean addPosition(Position position) {
+        int row = positionMapper.insertPosition(position.getName(),
+                position.getSalary(),
+                position.getAddress(),
+                position.getEducation(),
+                position.getExperience(),
+                position.getDetail(),
+                position.getPublishTime(),
+                position.getRecruiter().getId());
+        return row ==1;
+    }
 
+    @Override
+    public Boolean updatePosition(Position position) {
+        return positionMapper.updatePosition(position.getId(),
+                position.getName(),
+                position.getSalary(),
+                position.getAddress(),
+                position.getEducation(),
+                position.getExperience(),
+                position.getDetail(),
+                position.getPublishTime(),
+                position.getRecruiter().getId())==1;
+    }
+
+    @Override
+    public Boolean removePosition(int id) {
+        return positionMapper.deletePosition(id)==1;
     }
 
     @Override

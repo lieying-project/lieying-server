@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.DistrictMapper">
+
+    <select id="selectDetailDistrictById" resultMap="districtDetailResultMap" parameterType="int">
+        select  * from district where district_id = #{id}
+    </select>
+
+    <select id="selectDistrictById" resultMap="districtResultMap" parameterType="int">
+        select  * from district where district_id = #{id}
+    </select>
+
+    <select id="selectDistrictByCityId" resultMap="districtDetailResultMap" parameterType="int">
+        select * from district where city_id=#{city_id}
+    </select>
+    <resultMap id="districtDetailResultMap" type="District">
+
+        <id property="id" column="district_id"/>
+        <result property="name" column="district_name"/>
+        <association property="city" column="city_id" select="org.lieying.dao.CityMapper.selectCityById"/>
+<!--        <collection property="positions"></collection>-->
+
+    </resultMap>
+    <resultMap id="districtResultMap" type="District">
+
+        <id property="id" column="district_id"/>
+        <result property="name" column="district_name"/>
+<!--        @OneToMany(mappedBy = "district")-->
+<!--        private Set<Position> positions;-->
+    </resultMap>
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.ArticleMapper">
+
+
+    <select id="selectArticlesByJobHunterId" resultMap="articleResultMap" parameterType="int" >
+        select * from article where job_hunter_id = #{job_hunter_id}
+    </select>
+
+
+    <select id="selectAllArticles" resultMap="articleDetailResultMap">
+        select * from article
+    </select>
+
+    <select id="selectArticleById" resultMap="articleResultMap" parameterType="int">
+        select * from article where article_id = #{article_id} limit 1
+    </select>
+    <select id="selectDetailArticleById" resultMap="articleDetailResultMap" parameterType="int">
+        select * from article where article_id = #{article_id} limit 1
+    </select>
+
+    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="id"  parameterType="Article" >
+
+        insert into article( article_title,article_content, article_created_time, article_updated_time, job_hunter_id)
+        values (#{article_title},#{article_content},#{article_created_time} , #{article_updated_time}, #{job_hunter_id} )
+    </insert>
+    <resultMap id="articleResultMap" type="Article" >
+        <id property="id" column="article_id"/>
+        <result property="title" column="article_title"/>
+        <result property="content" column="article_content"/>
+        <result property="createdTime" column="article_created_time"/>
+        <result property="updatedTime" column="article_updated_time"/>
+        <result property="state" column="article_state"/>
+    </resultMap>
+
+    <resultMap id="articleDetailResultMap" type="Article">
+        <id property="id" column="article_id"/>
+        <result property="title" column="article_title"/>
+        <result property="content" column="article_content"/>
+        <result property="createdTime" column="article_created_time"/>
+        <result property="updatedTime" column="article_updated_time"/>
+        <result property="state" column="article_state"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+        <collection property="articleComments" column="article_id" select="org.lieying.dao.ArticleCommentMapper.selectArticleCommentsByArticleId"/>
+        <collection property="articleCollects" column="article_id" select="org.lieying.dao.ArticleCollectMapper.selectArticleCollectsByArticleId"/>
+        <collection property="articlePraises" column="article_id" select="org.lieying.dao.ArticlePraiseMapper.selectArticlePraisesByArticleId"/>
+<!--        @OneToMany(mappedBy = "article")-->
+<!--        private Set<ArticleComment> articleComments;-->
+<!--        @OneToMany(mappedBy = "article")-->
+<!--        private Set<ArticleCollect> articleCollects;-->
+<!--        @OneToMany(mappedBy = "article")-->
+<!--        private Set<ArticlePraise> articlePraises;-->
+    </resultMap>
+
+</mapper>

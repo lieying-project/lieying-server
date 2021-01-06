@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.ArticleCollectMapper">
+    <select id="selectArticleCollectById" resultMap="jobHunterCollectArticleResultMap" parameterType="int" >
+        select * from article_collect where article_collect_id = #{article_collect_id} limit 1
+    </select>
+    <select id="selectArticleCollectsByArticleId" resultMap="articleCollectResultMap" parameterType="int">
+        select * from article_collect where article_id = #{id}
+    </select>
+    <select id="selectArticleCollectsByJobHunterId" resultMap="jobHunterCollectResultMap" parameterType="int">
+        select * from article_collect where job_hunter_id = #{id}
+    </select>
+
+    <!--    <select id="selectArticleCommentsByJobHunterId" resultType="ArticleComment" parameterType="int">-->
+    <!--        select -->
+    <!--    </select>-->
+    <insert id="insertArticleCollect">
+        insert into article_collect(article_collect_created_time, article_id, job_hunter_id)
+        values (#{article_collect_created_time},#{article_id},
+                #{job_hunter_id})
+    </insert>
+    <delete id="deleteArticleCollect" parameterType="int">
+        delete from article_collect where article_collect_id=#{article_collect_id}
+    </delete>
+    <resultMap id="articleCollectResultMap" type="ArticleCollect">
+        <id property="id" column="article_collect_id"/>
+        <result property="createdTime" column="article_collect_created_time"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+    </resultMap>
+
+    <resultMap id="jobHunterCollectResultMap" type="ArticleCollect">
+        <id property="id" column="article_collect_id"/>
+        <result property="createdTime" column="article_collect_created_time"/>
+        <association property="article" column="article_id" select="org.lieying.dao.ArticleMapper.selectArticleById"/>
+    </resultMap>
+
+    <resultMap id="jobHunterCollectArticleResultMap" type="ArticleCollect">
+        <id property="id" column="article_collect_id"/>
+        <result property="createdTime" column="article_collect_created_time"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+        <association property="article" column="article_id" select="org.lieying.dao.ArticleMapper.selectArticleById"/>
+    </resultMap>
+</mapper>

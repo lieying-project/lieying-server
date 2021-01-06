@@ -10,7 +10,7 @@ public interface ResumeMapper {
 
      List<Resume> selectResumesByJobHunterId(int jobHunterId);
      Resume selectResumeById(int resumeId);
-     int updateResumeStateByJobHunterIdAndPositionId(@Param("job_hunter_id") Integer jobHunterId,
+     int updateResume(@Param("job_hunter_id") Integer jobHunterId,
                                                      @Param("position_id")Integer positionId,
                                                      @Param("resume_state")String state);
      int insertResume(@Param("resume_name")String name,

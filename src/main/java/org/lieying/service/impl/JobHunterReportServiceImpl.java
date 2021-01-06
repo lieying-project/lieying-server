@@ -9,6 +9,8 @@ import org.lieying.service.JobHunterReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class JobHunterReportServiceImpl implements JobHunterReportService {
 
@@ -29,7 +31,9 @@ public class JobHunterReportServiceImpl implements JobHunterReportService {
         } else {
             return jobHunterReportMapper.updateJobHunterReport(jobHunterReport.getReason(),
                     jobHunterReport.getFootnote(), jobHunterReport.getEvidenceScreenShot(),
-                    jobHunterReport.getJobHunter().getId(), jobHunterReport.getPosition().getId()) == 1;
+                    jobHunterReport.getState(),
+                    jobHunterReport.getJobHunter().getId(), jobHunterReport.getPosition().getId(),
+                    jobHunterReport.getId()) == 1;
 
         }
 
@@ -46,5 +50,15 @@ public class JobHunterReportServiceImpl implements JobHunterReportService {
             return null;
         }
         return jobHunterReportMapper.insertJobHunterReport(reason,footnote,evidenceScreenShot,jobHunter.getId(), position.getId())==1;
+    }
+
+    @Override
+    public List<JobHunterReport> queryAllJobHunterReports() {
+        return jobHunterReportMapper.selectAllJobHunterReports();
+    }
+
+    @Override
+    public List<JobHunterReport> queryJobHunterReportsByCriteria(String positionName, String jobHunterName, String reportReason,String state) {
+        return jobHunterReportMapper.selectJobHunterReportsByCriteria(positionName,jobHunterName,reportReason,state);
     }
 }

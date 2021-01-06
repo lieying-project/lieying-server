@@ -6,7 +6,27 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9719495-74f7-44ad-8140-d97fbd3e8d83" name="Default Changelist" comment="" />
+    <list default="true" id="f9719495-74f7-44ad-8140-d97fbd3e8d83" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/TestSpring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/JobHunterReportMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/JobHunterReportMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/PositionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/PositionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/ResumeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/ResumeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/JobHunterReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/JobHunterReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/PositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/ResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/ResumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/JobHunterReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/JobHunterReportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/PositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/PositionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/ResumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/JobHunterReportMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/JobHunterReportMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PositionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PositionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ResumeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ResumeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestServiceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestServiceAdd.java" afterDir="false" />
+    </list>
     <list id="c0ff6b04-e785-4b86-a7cf-487a6a7fee2d" name="second commit" comment="second commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +313,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -381,6 +401,7 @@
       <workItem from="1609006848003" duration="16056000" />
       <workItem from="1609557006792" duration="6047000" />
       <workItem from="1609637713046" duration="8405000" />
+      <workItem from="1609826956605" duration="25057000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1600070288260</created>
@@ -494,14 +515,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="74" key="#SQL_Resolution_Scopes/0.0.1536.824@0.0.1536.824" timestamp="1602916086134" />
-    <state x="131" y="130" width="1054" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609556914864">
+    <state x="131" y="130" width="1054" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609913659988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="131" y="130" width="1054" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609556914864" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1609342570940">
+    <state x="131" y="130" width="1054" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1609913659988" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1609904319922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1609342570940" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1609904319922" />
     <state x="571" y="281" width="393" height="265" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1607885560121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -522,38 +543,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="595" y="314" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1609161386661" />
-    <state width="1210" height="253" key="GridCell.Tab.0.bottom" timestamp="1609681822134">
+    <state width="1210" height="256" key="GridCell.Tab.0.bottom" timestamp="1609913624879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609681822134" />
-    <state width="1210" height="253" key="GridCell.Tab.0.center" timestamp="1609681822134">
+    <state width="1210" height="256" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609913624879" />
+    <state width="1210" height="256" key="GridCell.Tab.0.center" timestamp="1609913624879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609681822134" />
-    <state width="1210" height="253" key="GridCell.Tab.0.left" timestamp="1609681822134">
+    <state width="1210" height="256" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609913624879" />
+    <state width="1210" height="256" key="GridCell.Tab.0.left" timestamp="1609913624879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609681822134" />
-    <state width="1210" height="253" key="GridCell.Tab.0.right" timestamp="1609681822134">
+    <state width="1210" height="256" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609913624879" />
+    <state width="1210" height="256" key="GridCell.Tab.0.right" timestamp="1609913624879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609681822134" />
-    <state width="1210" height="253" key="GridCell.Tab.1.bottom" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609913624879" />
+    <state width="1210" height="256" key="GridCell.Tab.1.bottom" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
-    <state width="1210" height="253" key="GridCell.Tab.1.center" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
+    <state width="1210" height="256" key="GridCell.Tab.1.center" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
-    <state width="1210" height="253" key="GridCell.Tab.1.left" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
+    <state width="1210" height="256" key="GridCell.Tab.1.left" timestamp="1609913624879">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
-    <state width="1210" height="253" key="GridCell.Tab.1.right" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1609913624879" />
+    <state width="1210" height="256" key="GridCell.Tab.1.right" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
+    <state width="1210" height="256" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
     <state width="1221" height="266" key="GridCell.Tab.11.bottom" timestamp="1604709977789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -602,22 +623,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="862" height="204" key="GridCell.Tab.19.right/0.0.1536.824@0.0.1536.824" timestamp="1607164604127" />
-    <state width="1210" height="253" key="GridCell.Tab.2.bottom" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.2.bottom" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
-    <state width="1210" height="253" key="GridCell.Tab.2.center" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
+    <state width="1210" height="256" key="GridCell.Tab.2.center" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
-    <state width="1210" height="253" key="GridCell.Tab.2.left" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
+    <state width="1210" height="256" key="GridCell.Tab.2.left" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
-    <state width="1210" height="253" key="GridCell.Tab.2.right" timestamp="1609681822061">
+    <state width="1210" height="256" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
+    <state width="1210" height="256" key="GridCell.Tab.2.right" timestamp="1609913624880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1210" height="253" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1609681822061" />
+    <state width="1210" height="256" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1609913624880" />
     <state x="299" y="70" key="Maven.ArtifactSearchDialog" timestamp="1604390097992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -638,10 +659,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="485" y="63" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1602916051644" />
-    <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1609637834728">
+    <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1609826955905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1609637834728" />
+    <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1609826955905" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602915893649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -680,6 +701,11 @@
           <url>file://$PROJECT_DIR$/src/main/test/TestJobHunter.java</url>
           <line>18</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CompanyController.java</url>

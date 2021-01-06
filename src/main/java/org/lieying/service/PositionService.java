@@ -18,9 +18,13 @@ public interface PositionService {
                                              String positionSalary,
                                              String positionExperience,
                                              Integer financingStageId,
-                                             String positionPublishTime,Integer page);
-
-    Boolean addPosition(Position position,Integer recruiterId);
+                                             String positionPublishTime,
+                                                Integer recruiterId,
+                                                Integer page
+                                                );
+    Boolean addPosition(Position position);
+    Boolean updatePosition(Position position);
+    Boolean removePosition(int id);
     List<Position> queryHotPositionsByCriteria(int cityId,int positionCategoryId);
     List<Position> queryBrowsedPositionsByJobHunterId(int jobHunterId);
 }

@@ -33,13 +33,13 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     @Override
-    public Boolean modifyResumeState(Resume resume) {
+    public Boolean modifyResume(Resume resume) {
         if (resume.getJobHunter() == null) {
             throw new NullObjectAttributeException("");
         } else if (resume.getPosition() == null) {
             throw new NullObjectAttributeException("");
         }
-        return resumeMapper.updateResumeStateByJobHunterIdAndPositionId(
+        return resumeMapper.updateResume(
                 resume.getJobHunter().getId(), resume.getPosition().getId(), resume.getState()) == 1 ;
     }
 

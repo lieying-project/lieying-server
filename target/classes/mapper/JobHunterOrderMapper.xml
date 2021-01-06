@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.JobHunterOrderMapper">
+
+    <select id="selectOrderById" resultMap="jobHunterResourceOrderResultMap" parameterType="int" >
+        select * from job_hunter_order where job_hunter_order_id = #{job_hunter_order_id} limit 1
+    </select>
+    <select id="selectJobHunterOrdersByResourceId" resultMap="resourceOrderResultMap" parameterType="int">
+        select * from job_hunter_order where resource_id = #{id}
+    </select>
+    <select id="selectJobHunterOrdersByJobHunterId" resultMap="jobHunterOrderResultMap" parameterType="int">
+        select * from job_hunter_order where job_hunter_id = #{id}
+    </select>
+    <resultMap id="resourceOrderResultMap" type="JobHunterOrder">
+        <id property="id" column="job_hunter_order_id"/>
+        <result property="state" column="job_hunter_order_state"/>
+        <result property="createdTime" column="job_hunter_order_created_time"/>
+        <result property="payTime" column="job_hunter_order_pay_time"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+    </resultMap>
+
+    <resultMap id="jobHunterOrderResultMap" type="JobHunterOrder">
+        <id property="id" column="job_hunter_order_id"/>
+        <result property="state" column="job_hunter_order_state"/>
+        <result property="createdTime" column="job_hunter_order_created_time"/>
+        <result property="payTime" column="job_hunter_order_pay_time"/>
+        <association property="resource" column="resource_id" select="org.lieying.dao.ResourceMapper.selectResourceById"/>
+    </resultMap>
+
+    <resultMap id="jobHunterResourceOrderResultMap" type="JobHunterOrder">
+        <id property="id" column="job_hunter_order_id"/>
+        <result property="state" column="job_hunter_order_state"/>
+        <result property="createdTime" column="job_hunter_order_created_time"/>
+        <result property="payTime" column="job_hunter_order_pay_time"/>
+        <association property="resource" column="resource_id" select="org.lieying.dao.ResourceMapper.selectResourceById"/>
+        <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
+    </resultMap>
+</mapper>

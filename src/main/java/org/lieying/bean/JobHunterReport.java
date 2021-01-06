@@ -23,6 +23,9 @@ public class JobHunterReport implements Serializable {
 	@Column(name="job_hunter_report_reason")
 	private String reason;
 
+	@Column(name="job_hunter_report_state")
+	private String state;
+
 	@Column(name="job_hunter_report_footnote")
 	private String footnote;
 
@@ -31,7 +34,8 @@ public class JobHunterReport implements Serializable {
 
 	@Column(name="job_hunter_report_created_time")
 	private java.util.Date createTime;
-	
+
+
 	@ManyToOne(targetEntity=JobHunter.class)
 	@JoinColumn(name="job_hunter_id")
 	private JobHunter jobHunter;
@@ -40,9 +44,4 @@ public class JobHunterReport implements Serializable {
 	@JoinColumn(name="position_id")
 	private Position position;
 
-
-	private int positionId;
-	private int jobHunterId;
-
-	
 }

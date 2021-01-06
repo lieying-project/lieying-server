@@ -65,7 +65,9 @@ public class PositionController {
                                          @RequestParam(value = "positionExperience", required = false) String positionExperience,
                                          @RequestParam(value = "financingStageId", required = false) Integer financingStageId,
                                          @RequestParam(value = "positionPublishTime", required = false) String positionPublishTime,
+                                         @RequestParam(value = "recruiterId", required = false) Integer recruiterId,
                                          @RequestParam(value = "page", required = false) Integer page,
+
                                          HttpServletRequest request) {
 //        System.out.println("keyword:" + keyword + " cityId:" + cityId + " positionCategoryId:" + positionCategoryId + " industryId:" + industryId +
 //                " financingStageId:" + financingStageId);
@@ -80,7 +82,7 @@ public class PositionController {
                 positionSalary,
                 positionExperience,
                 financingStageId,
-                positionPublishTime,page));
+                positionPublishTime,recruiterId,page));
     }
 
     /*
@@ -92,19 +94,28 @@ public class PositionController {
     *   @param   detail    详情
     *   @param   recruiterId 招聘者id
     * */
-    @RequestMapping(value = "/add",produces = "text/plain;charset=UTF-8")
-    public String addPosition(String name, String salary, String address, String education,
-                               String experience, String detail,
-                               Integer recruiterId) {
-        Position position = new Position();
-        position.setName(name);
-        position.setSalary(salary);
-        position.setAddress(address);
-        position.setEducation(education);
-        position.setExperience(experience);
-        position.setDetail(detail);
-        position.setPublishTime(new Date());
-        return JSON.toJSONString(positionService.addPosition(position,recruiterId));
+    @PostMapping(value = "/save",produces = "text/plain;charset=UTF-8")
+    public String savePosition(@RequestBody Position position) {
+        System.out.println(position);
+        return JSON.toJSONString(positionService.addPosition(position));
+    }
+
+    /*更新职位
+    * @param position 职位信息
+    * */
+    @PostMapping(value = "/update",produces = "text/plain;charset=UTF-8")
+    public String updatePosition(@RequestBody Position position){
+        return JSON.toJSONString(positionService.updatePosition(position));
+    }
+    /*
+    * 删除职位
+    * @param id 职位ID
+    * */
+    @RequestMapping(value = "/delete",produces = "text/plain;charset=UTF-8")
+    public String deletePosition(@RequestParam("id") Integer id){
+        System.out.println(id);
+        return JSON.toJSONString(positionService.removePosition(id));
+
     }
 
     /*
@@ -115,12 +126,9 @@ public class PositionController {
      */
     @RequestMapping(value = "/hot",produces = "text/plain;charset=UTF-8")
     public String hotPositions(@RequestParam("cityId") int cityId,@RequestParam("positionCategoryId")int positionCategoryId){
-
         //System.out.println("hot");
         return JSON.toJSONString( positionService.queryHotPositionsByCriteria(cityId,positionCategoryId));
     }
-
-
     /*
      *  查询所有职位类型
      *

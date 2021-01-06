@@ -62,12 +62,10 @@ public class JobHunterController {
         return JSON.toJSONString(resumeService.queryResumeById(resumeId));
     }
 
-    @PostMapping(value = "/resume/update", produces = "text/plain;charset=UTF-8")
-    public String updateResumeState(@RequestBody Resume resume) {
 
-        return JSON.toJSONString(resumeService.modifyResumeState(resume));
-    }
-
+    /*
+    * 求职者登录
+    * */
     @PostMapping(value = "/login", produces = "application/plain;charset=UTF-8")
     public String jobHunterLogin(@RequestBody JobHunter jobHunter, HttpServletResponse response) {
         System.out.println(jobHunter);
@@ -87,6 +85,10 @@ public class JobHunterController {
         response.setHeader("token", token);
         return JSON.toJSONString(jobHunter1);
     }
+
+    /*
+    * 求职者注册
+    * */
     @PostMapping(value = "/register", produces = "text/plain;charset=UTF-8")
     public String jobHunterRegister(@RequestBody JobHunter jobHunter){
         return JSON.toJSONString(jobHunterService.addJobHunter(jobHunter.getUsername(),jobHunter.getPassword(),jobHunter.getPhone()));
@@ -102,12 +104,19 @@ public class JobHunterController {
         return JSON.toJSONString(jobHunterReportService.queryJobHunterReportByJobHunterIdAndPositionId(jobHunterId, positionId));
     }
 
+    /*
+    * 保存求职者举报信息
+    * */
     @PostMapping(value = "/report/save", produces = "text/plain;charset=UTF-8")
     public String saveJobHunterReport(@RequestBody JobHunterReport jobHunterReport) {
         return JSON.toJSONString(jobHunterReportService.addJobHunterReport(jobHunterReport));
     }
 
-    //更新举报信息
+    /*
+    *
+    * 更新举报信息
+    *
+    * */
     @PostMapping(value = "/report/update", produces = "text/plain;charset=UTF-8")
     public String updateJobHunterReport(@RequestBody JobHunterReport jobHunterReport) {
         //System.out.println(jobHunterReport);
