@@ -19,8 +19,28 @@
         where company.company_id = position.company_id
         <if test="city_id!=null"> and company.city_id = #{city_id} </if>
         group by  position.company_id order by count(company.company_id) desc
-
     </select>
+    <update id="updateCompany">
+        update company set company_id=#{company_id}
+        <if test="company_name!=null">,company_name = #{company_name}</if>
+        <if test="company_address!=null">,company_address = #{company_address}</if>
+        <if test="company_phone!=null">,company_phone = #{company_phone}</if>
+        <if test="company_intro!=null">,company_intro = #{company_intro}</if>
+        <if test="company_sign!=null">,company_sign = #{company_sign}</if>
+        <if test="company_culture!=null">,company_culture = #{company_culture}</if>
+        <if test="company_license!=null">,company_license = #{company_license}</if>
+        <if test="company_representative!=null">,company_representative = #{company_representative}</if>
+        <if test="company_established!=null">,company_established = #{company_established}</if>
+        <if test="company_register_capital!=null">,company_register_capital = #{company_register_capital}</if>
+        <if test="company_business_scope!=null">,company_business_scope = #{company_business_scope}</if>
+        <if test="company_employee_welfare!=null">,company_employee_welfare = #{company_employee_welfare}</if>
+        <if test="company_work_time!=null">,company_work_time = #{company_work_time}</if>
+        <if test="city_id!=null">,city_id = #{city_id}</if>
+        <if test="industry_id!=null">,industry_id = #{industry_id}</if>
+        <if test="company_scale_id!=null">,company_scale_id = #{company_scale_id}</if>
+        <if test="financing_stage_id!=null">,financing_stage_id = #{financing_stage_id}</if>
+        where company_id=#{company_id}
+    </update>
     <resultMap id="companyResultMap" type="Company">
         <id property="id" column="company_id"/>
         <result property="name" column="company_name"/>
@@ -44,4 +64,6 @@
         <collection property="recruiters" column="company_id" select="org.lieying.dao.RecruiterMapper.selectRecruitersByCompanyId"/>
         <collection property="companyPictures" column="company_id" select="org.lieying.dao.CompanyPictureMapper.selectCompanyPicturesByCompanyId"/>
     </resultMap>
+
+
 </mapper>

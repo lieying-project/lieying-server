@@ -61,8 +61,6 @@ public class AdministratorController {
         return JSON.toJSONString(jobHunterReportService.queryJobHunterReportsByCriteria(positionName,jobHunterName,reason,state));
     }
 
-
-
     /*
      * 更新简历状态
      * */

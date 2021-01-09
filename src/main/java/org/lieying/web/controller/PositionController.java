@@ -67,7 +67,7 @@ public class PositionController {
                                          @RequestParam(value = "positionPublishTime", required = false) String positionPublishTime,
                                          @RequestParam(value = "recruiterId", required = false) Integer recruiterId,
                                          @RequestParam(value = "page", required = false) Integer page,
-
+                                         @RequestParam(value = "pageSize", required = false) Integer pageSize,
                                          HttpServletRequest request) {
 //        System.out.println("keyword:" + keyword + " cityId:" + cityId + " positionCategoryId:" + positionCategoryId + " industryId:" + industryId +
 //                " financingStageId:" + financingStageId);
@@ -82,7 +82,7 @@ public class PositionController {
                 positionSalary,
                 positionExperience,
                 financingStageId,
-                positionPublishTime,recruiterId,page));
+                positionPublishTime,recruiterId,page,pageSize));
     }
 
     /*

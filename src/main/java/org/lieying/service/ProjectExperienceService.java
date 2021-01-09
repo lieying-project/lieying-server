@@ -1,8 +1,8 @@
 package org.lieying.service;
 
-import org.apache.ibatis.annotations.Param;
+import org.lieying.bean.ProjectExperience;
 
 public interface ProjectExperienceService {
-    Boolean addProjectExperience(String name, String role, String url, java.util.Date  startTime,
-                                 java.util.Date  endTime, String desc, String performance, Integer resumeId);
+    Boolean addProjectExperience(ProjectExperience projectExperience);
+    Boolean modifyProjectExperience(ProjectExperience projectExperience);
 }

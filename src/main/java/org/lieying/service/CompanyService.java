@@ -11,4 +11,5 @@ public interface CompanyService {
                                                    Integer financingStageId,
                                                   Integer companyScaleId);
      List<Company> queryHotCompaniesByCriteria(Integer cityId);
+     Boolean modifyCompany(Company company);
 }

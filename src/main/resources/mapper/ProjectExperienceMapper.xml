@@ -14,6 +14,35 @@
                 #{project_experience_end_time}, #{project_experience_description},
                 #{project_experience_performance}, #{resume_id})
     </insert>
+    <update id="updateProjectExperience">
+        update project_experience set project_experience_id=#{project_experience_id}
+        <if test="project_experience_name!=null">
+            ,project_experience_name=#{project_experience_name}
+        </if>
+        <if test="project_experience_role!=null">
+            ,project_experience_role=#{project_experience_role}
+        </if>
+        <if test="project_experience_url!=null">
+            ,project_experience_url=#{project_experience_url}
+        </if>
+        <if test="project_experience_start_time!=null">
+            ,project_experience_start_time=#{project_experience_start_time}
+        </if>
+        <if test="project_experience_end_time!=null">
+            ,project_experience_end_time=#{project_experience_end_time}
+        </if>
+        <if test="project_experience_description!=null">
+            ,project_experience_description=#{project_experience_description}
+        </if>
+        <if test="project_experience_performance!=null">
+            ,project_experience_performance=#{project_experience_performance}
+        </if>
+        <if test="resume_id!=null">
+            ,resume_id=#{resume_id}
+        </if>
+
+        where project_experience_id=#{project_experience_id};
+    </update>
     <select id="selectProjectExperiencesByResumeId" resultMap="projectExperienceResultMap" parameterType="int">
         select *
         from project_experience

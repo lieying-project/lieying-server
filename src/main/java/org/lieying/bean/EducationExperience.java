@@ -16,7 +16,7 @@ public class EducationExperience implements Serializable {
 	@Column(name="education_experience_id")
 	private Integer id;
 
-	@Column(name="education_experience_school",length=50,nullable=false)
+	@Column(name="",length=50,nullable=false)
 	private String school;
 
 	@Column(name="education_experience_profession",length=20)

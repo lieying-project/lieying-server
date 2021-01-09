@@ -5,23 +5,28 @@
 
 
     <select id="selectVolunteerExperiencesByResumeId" resultMap="volunteerExperienceResultMap" parameterType="int">
-        select * from volunteer_experience where resume_id = #{id}
+        select *
+        from volunteer_experience
+        where resume_id = #{id}
     </select>
     <insert id="insertVolunteerExperience">
-        insert into volunteer_experience(volunteer_experience_name,volunteer_experience_duration,volunteer_experience_start_time,
-                                         volunteer_experience_end_time ,volunteer_experience_description,resume_id)
-                                         values (#{volunteer_experience_name},#{volunteer_experience_duration},#{volunteer_experience_start_time},
-                                                 #{volunteer_experience_end_time},#{volunteer_experience_description},#{resume_id})
+        insert into volunteer_experience(volunteer_experience_name, volunteer_experience_duration,
+                                         volunteer_experience_start_time,
+                                         volunteer_experience_end_time, volunteer_experience_description, resume_id)
+        values (#{volunteer_experience_name}, #{volunteer_experience_duration}, #{volunteer_experience_start_time},
+                #{volunteer_experience_end_time}, #{volunteer_experience_description}, #{resume_id})
+
     </insert>
-
-
-
-
-
-
-
-
-
+    <update id="updateVolunteerExperience">
+        update volunteer_experience set volunteer_experience_id=#{volunteer_experience_id}
+        <if test="volunteer_experience_name!=null">,volunteer_experience_name=#{volunteer_experience_name}</if>
+        <if test="volunteer_experience_duration!=null">,volunteer_experience_duration=#{volunteer_experience_duration}</if>
+        <if test="volunteer_experience_start_time!=null">,volunteer_experience_start_time=#{volunteer_experience_start_time}</if>
+        <if test="volunteer_experience_end_time!=null">,volunteer_experience_end_time=#{volunteer_experience_end_time}</if>
+        <if test="volunteer_experience_description!=null">,volunteer_experience_description=#{volunteer_experience_description}</if>
+        <if test="resume_id!=null">,resume_id=#{resume_id}</if>
+        where volunteer_experience_id=#{volunteer_experience_id}
+    </update>
     <resultMap id="volunteerExperienceResultMap" type="VolunteerExperience">
         <id property="id" column="volunteer_experience_id"/>
         <result property="name" column="volunteer_experience_name"/>

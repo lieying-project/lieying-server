@@ -20,7 +20,7 @@ public interface PositionService {
                                              Integer financingStageId,
                                              String positionPublishTime,
                                                 Integer recruiterId,
-                                                Integer page
+                                                Integer page,Integer pageSize
                                                 );
     Boolean addPosition(Position position);
     Boolean updatePosition(Position position);

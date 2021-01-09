@@ -160,7 +160,11 @@
       <artifactId>commons-fileupload</artifactId>
       <version>${commons-fileupload.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.3</version>
+    </dependency>
 
     <!-- servlet相关jar -->
     <dependency>

@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface PositionMapper {
     Position selectDetailPositionById(int id);
-
     List<Position> selectPositionsByCriteria(@Param("keyword") String keyword,
                                              @Param("city_id") Integer cityId,
                                              @Param("position_category_id") Integer positionCategoryId,
@@ -21,7 +20,6 @@ public interface PositionMapper {
                                              @Param("financing_stage_id") Integer financingStageId,
                                              @Param("position_publish_time") String positionPublishTime,
                                              @Param("recruiter_id") Integer recruiterId);
-
     int insertPosition(
             @Param("position_name") String position_name,
             @Param("position_salary") String position_salary,
@@ -30,7 +28,8 @@ public interface PositionMapper {
             @Param("position_experience") String position_experience,
             @Param("position_detail") String position_detail,
             @Param("position_publish_time") Date position_publish_time,
-            @Param("recruiter_id") Integer recruiterId);
+            @Param("recruiter_id") Integer recruiterId,
+    @Param("position_category_id")Integer positionCategoryId);
 
     int updatePosition(@Param("position_id") Integer id,
                        @Param("position_name") String position_name,
