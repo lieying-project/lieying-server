@@ -43,25 +43,25 @@ public class TestServiceAdd {
     }
     @Test
     public void testAddCredential(){
-        System.out.println(credentialService.addCredential("证书4","photo1",1));
+        //System.out.println(credentialService.addCredential("证书4","photo1",1));
     }
     @Test
     public void testAddInternshipExperience(){
-        System.out.println(internshipExperienceService.addInternshipExperience("company1","department1",
-                "posicategory1","industry1","technolory1","positionName",
-                new Date(),new Date(),"jobContent","jobPerformance",1));
+//        System.out.println(internshipExperienceService.addInternshipExperience("company1","department1",
+//                "posicategory1","industry1","technolory1","positionName",
+//                new Date(),new Date(),"jobContent","jobPerformance",1));
     }
 
     @Test
     public void testAddProjectExperience(){
-        System.out.println(projectExperienceService.addProjectExperience("name1","role1","url1",
-                new Date(),new Date(),"desc","performance",1));
+//        System.out.println(projectExperienceService.addProjectExperience("name1","role1","url1",
+//                new Date(),new Date(),"desc","performance",1));
     }
 
     @Test
     public void testAddVolunteerExperience(){
-        System.out.println(volunteerExperienceService.addVolunteerExperience("name","duaration",
-                new Date(),new Date(),"desc",1));
+//        System.out.println(volunteerExperienceService.addVolunteerExperience("name","duaration",
+//                new Date(),new Date(),"desc",1));
     }
     @Test
     public void testAddJobHunter(){
@@ -82,10 +82,10 @@ public class TestServiceAdd {
 
     @Test
     public void testAddResume(){
-        System.out.println(resumeService.addResume("name1","博士后",1,"advantage",
-                "expectedCity","expectedPosition","salary","workaddress",
-                "worjexperience","projecrexe","socialhomee","volunsse",
-                "enff","rejectReason",new Date(),new Date(),new Date(),"state"));
+//        System.out.println(resumeService.addResume("name1","博士后",1,"advantage",
+//                "expectedCity","expectedPosition","salary","workaddress",
+//                "worjexperience","projecrexe","socialhomee","volunsse",
+//                "enff","rejectReason",new Date(),new Date(),new Date(),"state"));
     }
     @Test
     public void testDeleteResume(){

@@ -13,24 +13,7 @@ public interface ResumeService {
 
     Boolean modifyResume(Resume resume);
 
-    Boolean addResume(String name,
-                      String education,
-                      int age,
-                      String advantage,
-                      String expectedCity,
-                      String expectedPosition,
-                      String expectedSalary,
-                      String workAddress,
-                      String workExperience,
-                      String projectExperience,
-                      String socialHomepage,
-                      String volunteerServiceExperience,
-                      String enclosure,
-                      String rejectReason,
-                      java.util.Date createdTime,
-                      java.util.Date updatedTime,
-                      java.util.Date deliveredTime,
-                      String state);
+    Boolean addResume(Resume resume);
 
     boolean removeResume(int id);
     boolean updateResumeNameById(int id,String name);

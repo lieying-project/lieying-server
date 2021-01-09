@@ -14,12 +14,51 @@
                                           internship_experience_start_time, internship_experience_end_time,
                                           internship_experience_job_content, internship_experience_job_performance,
                                           resume_id)
-        values(#{internship_experience_company},#{internship_experience_department},
-               #{internship_experience_position_category},#{internship_experience_industry},
-               #{internship_experience_technology},#{internship_experience_position_name},
-               #{internship_experience_start_time},#{internship_experience_end_time},
-               #{internship_experience_job_content},#{internship_experience_job_performance},#{resume_id})
+        values (#{internship_experience_company}, #{internship_experience_department},
+                #{internship_experience_position_category}, #{internship_experience_industry},
+                #{internship_experience_technology}, #{internship_experience_position_name},
+                #{internship_experience_start_time}, #{internship_experience_end_time},
+                #{internship_experience_job_content}, #{internship_experience_job_performance}, #{resume_id})
     </insert>
+
+    <update id="updateInternshipExperience">
+        update internship_experience set internship_experience_id=#{internship_experience_id}
+        <if test="internship_experience_company!=null">
+            ,internship_experience_company=#{internship_experience_company}
+        </if>
+        <if test="internship_experience_department!=null">
+            ,internship_experience_department=#{internship_experience_department}
+        </if>
+        <if test="internship_experience_position_category!=null">
+            ,internship_experience_position_category=#{internship_experience_position_category}
+        </if>
+        <if test="internship_experience_industry!=null">
+            ,internship_experience_industry=#{internship_experience_industry}
+        </if>
+        <if test="internship_experience_technology!=null">
+            ,internship_experience_technology=#{internship_experience_technology}
+        </if>
+        <if test="internship_experience_position_name!=null">
+            ,internship_experience_position_name=#{internship_experience_position_name}
+        </if>
+        <if test="internship_experience_start_time!=null">
+            ,internship_experience_start_time=#{internship_experience_start_time}
+        </if>
+        <if test="internship_experience_end_time!=null">
+            ,internship_experience_end_time=#{internship_experience_end_time}
+        </if>
+        <if test="internship_experience_job_content!=null">
+            ,internship_experience_job_content=#{internship_experience_job_content}
+        </if>
+        <if test="internship_experience_job_performance!=null">
+            ,internship_experience_job_performance=#{internship_experience_job_performance}
+        </if>
+        <if test="resume_id!=null">
+            ,resume_id=#{resume_id}
+        </if>
+        where internship_experience_id=#{internship_experience_id}
+    </update>
+
 
     <resultMap id="internshipExperienceResultMap" type="InternshipExperience">
         <id property="id" column="internship_experience_id"/>

@@ -40,8 +40,12 @@ public class PositionServiceImpl implements PositionService {
                                                        Integer financingStageId,
                                                        String positionPublishTime,
                                                        Integer recruiterId,
-                                                       Integer page) {
-        int pageSize = 2;
+                                                       Integer page,
+                                                       Integer pageSize) {
+        if (pageSize==null){
+            pageSize = 2;
+        }
+
         System.out.println("page:" + page + " pageSize:" + pageSize);
         if (page == null) {
             page = 1;
@@ -63,26 +67,44 @@ public class PositionServiceImpl implements PositionService {
                         positionPublishTime,
                         recruiterId);
         PageInfo<Position> pageInfo = new PageInfo<>(positions);
-
         return pageInfo;
     }
 
 
     @Override
     public Boolean addPosition(Position position) {
-        int row = positionMapper.insertPosition(position.getName(),
-                position.getSalary(),
-                position.getAddress(),
-                position.getEducation(),
-                position.getExperience(),
-                position.getDetail(),
-                position.getPublishTime(),
-                position.getRecruiter().getId());
-        return row ==1;
+        Integer positionCategoryId=null;
+        Integer recruiterId=null;
+        if (position.getPositionCategory()!=null){
+            positionCategoryId=position.getPositionCategory().getId();
+        }
+        if (position.getRecruiter()!=null){
+            recruiterId=position.getRecruiter().getId();
+        }
+        try {
+            return positionMapper.insertPosition(position.getName(),
+                    position.getSalary(),
+                    position.getAddress(),
+                    position.getEducation(),
+                    position.getExperience(),
+                    position.getDetail(),
+                    position.getPublishTime(),
+                    recruiterId,
+                    positionCategoryId)==1;
+        }catch (Exception e){
+            e.printStackTrace();
+            return  false;
+        }
+
     }
 
     @Override
     public Boolean updatePosition(Position position) {
+        Integer recruiterId=null;
+        if (position.getRecruiter()!=null){
+            recruiterId=position.getRecruiter().getId();
+        }
+
         return positionMapper.updatePosition(position.getId(),
                 position.getName(),
                 position.getSalary(),
@@ -91,7 +113,7 @@ public class PositionServiceImpl implements PositionService {
                 position.getExperience(),
                 position.getDetail(),
                 position.getPublishTime(),
-                position.getRecruiter().getId())==1;
+                recruiterId)==1;
     }
 
     @Override

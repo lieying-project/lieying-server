@@ -34,24 +34,50 @@ public class ResumeServiceImpl implements ResumeService {
 
     @Override
     public Boolean modifyResume(Resume resume) {
-        if (resume.getJobHunter() == null) {
-            throw new NullObjectAttributeException("");
-        } else if (resume.getPosition() == null) {
-            throw new NullObjectAttributeException("");
+        Integer jobHunterId=null;
+        Integer positionId=null;
+        if (resume.getJobHunter()!=null){
+            jobHunterId=resume.getJobHunter().getId();
         }
-        return resumeMapper.updateResume(
-                resume.getJobHunter().getId(), resume.getPosition().getId(), resume.getState()) == 1 ;
+        if (resume.getPosition()!=null){
+            positionId=resume.getPosition().getId();
+        }
+      try{
+          return resumeMapper.updateResume(
+                 resume.getId(),resume.getName(),resume.getEducation(),resume.getAge(),
+                  resume.getAdvantage(),resume.getExpectedCity(),resume.getExpectedPosition(),
+                  resume.getExpectedSalary(),resume.getWorkAddress(),resume.getWorkExperience(),
+                  resume.getProjectExperience(),resume.getSocialHomepage(),resume.getVolunteerServiceExperience(),
+                  resume.getEnclosure(),resume.getRejectReason(),resume.getCreatedTime(),resume.getUpdatedTime(),
+                  resume.getDeliveredTime(),resume.getState(),jobHunterId,positionId) == 1 ;
+      }catch (Exception e){
+          e.printStackTrace();
+          return false;
+      }
+
     }
 
     @Override
-    public Boolean addResume(String name, String education, int age, String advantage, String expectedCity, String expectedPosition, String expectedSalary, String workAddress, String workExperience, String projectExperience, String socialHomepage, String volunteerServiceExperience, String enclosure, String rejectReason, Date createdTime, Date updatedTime, Date deliveredTime, String state) {
-       return resumeMapper.insertResume( name,  education,  age,  advantage,  expectedCity,  expectedPosition,  expectedSalary,  workAddress,  workExperience,  projectExperience,  socialHomepage,  volunteerServiceExperience,  enclosure,  rejectReason,  createdTime,  updatedTime,  deliveredTime,  state)==1;
+    public Boolean addResume(Resume resume) {
+        Integer jobHunterId=null;
+        Integer positionId=null;
+        if (resume.getJobHunter()!=null){
+            jobHunterId=resume.getJobHunter().getId();
+        }
+        if (resume.getPosition()!=null){
+            positionId=resume.getPosition().getId();
+        }
+       return resumeMapper.insertResume( resume.getName(),  resume.getEducation(),  resume.getAge(),  resume.getAdvantage(),
+               resume.getExpectedCity(),  resume.getExpectedPosition(),
+               resume.getExpectedSalary(), resume.getWorkAddress(),  resume.getWorkExperience(),
+               resume.getProjectExperience(),  resume.getSocialHomepage(),  resume.getVolunteerServiceExperience(),
+               resume.getEnclosure(),  resume.getRejectReason(),  resume.getCreatedTime(),  resume.getUpdatedTime(),
+               resume.getDeliveredTime(),  resume.getState(),jobHunterId,positionId)==1;
     }
     @Override
     public boolean removeResume(int id) {
         return resumeMapper.deleteResume(id)==1;
     }
-
     @Override
     public boolean updateResumeNameById(int id, String name) {
         return resumeMapper.updateResumeNameById(id,name)==1;

@@ -1,5 +1,6 @@
 package org.lieying.service.impl;
 
+import org.lieying.bean.VolunteerExperience;
 import org.lieying.dao.VolunteerExperienceMapper;
 import org.lieying.service.VolunteerExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,24 @@ public class VolunteerExperienceServiceImpl implements VolunteerExperienceServic
     @Autowired
     private VolunteerExperienceMapper volunteerExperienceMapper;
     @Override
-    public Boolean addVolunteerExperience(String name, String duration, Date startTime, Date endTime, String description, Integer resumeId) {
+    public Boolean addVolunteerExperience(VolunteerExperience volunteerExperience) {
+        try {
+            return volunteerExperienceMapper.insertVolunteerExperience(
+                    volunteerExperience.getName(),volunteerExperience.getDuration(),
+                    volunteerExperience.getStartTime(),volunteerExperience.getEndTime(),
+                    volunteerExperience.getDescription(),
+                    volunteerExperience.getResume().getId())==1;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 
-        return volunteerExperienceMapper.insertVolunteerExperience(name,duration,startTime,endTime,description,resumeId)==1;
+    @Override
+    public Boolean modifyVolunteerExperience(VolunteerExperience volunteerExperience) {
+        return volunteerExperienceMapper.updateVolunteerExperience(volunteerExperience.getId(),
+                volunteerExperience.getName(),
+                volunteerExperience.getDuration(),volunteerExperience.getStartTime(),volunteerExperience.getEndTime(),
+                volunteerExperience.getDescription(),volunteerExperience.getResume().getId())==1;
     }
 }

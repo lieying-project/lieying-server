@@ -111,15 +111,37 @@
     <insert id="insertPosition" parameterType="Position">
         insert into position
         (position_name,position_salary,position_address,position_education,
-        position_experience,position_detail,position_publish_time,recruiter_id)
+        position_experience,position_detail,position_publish_time,recruiter_id,position_category_id)
         values(#{position_name},#{position_salary},#{position_address},#{position_education},
-        #{position_experience},#{position_detail},#{position_publish_time},#{recruiter_id})
+        #{position_experience},#{position_detail},#{position_publish_time},#{recruiter_id},#{position_category_id})
     </insert>
     <insert id="updatePosition" parameterType="Position">
-        update position set position_name=#{position_name},position_salary=#{position_salary},
-        position_address=#{position_address},position_education=#{position_education},
-        position_experience=#{position_experience},position_detail=#{position_detail},position_publish_time=#{position_publish_time},
-        recruiter_id=#{recruiter_id} where position_id=#{position_id}
+        update position set  position_id=#{position_id}
+        <if test="position_name!=null">
+            ,position_name=#{position_name}
+        </if>
+        <if test="position_salary!=null">
+            ,position_salary=#{position_salary}
+        </if>
+        <if test="position_address!=null">
+            ,position_address=#{position_address}
+        </if>
+        <if test="position_education!=null">
+            ,position_education=#{position_education}
+        </if>
+        <if test="position_experience!=null">
+            ,position_experience=#{position_experience}
+        </if>
+        <if test="position_detail!=null">
+            ,position_detail=#{position_detail}
+        </if>
+        <if test="position_publish_time!=null">
+            ,position_publish_time=#{position_publish_time}
+        </if>
+        <if test="recruiter_id!=null">
+            ,recruiter_id=#{recruiter_id}
+        </if>
+        where position_id=#{position_id}
     </insert>
     <delete id="deletePosition" >
         delete from position where position_id= #{position_id}

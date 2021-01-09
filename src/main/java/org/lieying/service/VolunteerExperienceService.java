@@ -1,8 +1,8 @@
 package org.lieying.service;
 
+import org.lieying.bean.VolunteerExperience;
+
 public interface VolunteerExperienceService {
-    Boolean addVolunteerExperience(String name,String duration,java.util.Date startTime,
-                                   java.util.Date endTime,
-                                  String description,
-                                  Integer resumeId);
+    Boolean addVolunteerExperience(VolunteerExperience volunteerExperience);
+    Boolean modifyVolunteerExperience(VolunteerExperience volunteerExperience);
 }

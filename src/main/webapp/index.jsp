@@ -6,14 +6,15 @@
 </head>
 <body>
 
-<form method="post" action="/lieying/jobHunter/login" >
-    <input type="text" name="username"/>
-    <input type="password" name="password">
-    <input type="submit">
-</form>
+
+<%--<form action="/file/upload" method="post" enctype="multipart/form-data">--%>
+<%--    <input type="file"  name="file"/>--%>
+<%--    <input type="submit" value="提交"/>--%>
+<%--</form>--%>
+
 <%--    websocket Demo---- user000 <br/>--%>
 <%--    <input id="text" type="text"/>--%>
-<%--    <button onclick="send()"> Send</button>--%>
+<%--    <button onclick="sen+d()"> Send</button>--%>
 <%--    <button onclick="closeWebSocket()"> Close</button>--%>
 <%--    <div id="message"></div>--%>
 

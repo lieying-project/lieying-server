@@ -5,8 +5,40 @@
 
 
     <select id="selectEducationExperiencesByResumeId" resultMap="educationExperienceResultMap" parameterType="int">
-        select * from education_experience where resume_id = #{id}
+        select *
+        from education_experience
+        where resume_id = #{id}
     </select>
+    <insert id="insertEducationExperience">
+        insert into education_experience(education_experience_school,
+                                         education_experience_profession,
+                                         education_experience_time_quantum,
+                                         education_experience_school_experience,
+                                         education_experience_school_experience,
+                                         education_experience_stage, resume_id)
+        values (#{education_experience_school},
+                #{education_experience_profession},
+                #{education_experience_time_quantum},
+                #{education_experience_school_experience},
+                #{education_experience_school_experience},
+                #{education_experience_stage}, #{resume_id})
+    </insert>
+    <update id="updateEducationExperience">
+        update education_experience set education_experience_id=#{education_experience_id}
+        <if test="education_experience_school!=null">,education_experience_school=#{education_experience_school}</if>
+        <if test="education_experience_profession!=null">
+            ,education_experience_profession=#{education_experience_profession}
+        </if>
+        <if test="education_experience_time_quantum!=null">
+            ,education_experience_time_quantum=#{education_experience_time_quantum}
+        </if>
+        <if test="education_experience_school_experience!=null">
+            ,education_experience_school_experience=#{education_experience_school_experience}
+        </if>
+        <if test="education_experience_stage!=null">,education_experience_stage=#{education_experience_stage}</if>
+        <if test="resume_id!=null">,resume_id=#{resume_id}</if>
+        where education_experience_id=#{education_experience_id}
+    </update>
     <resultMap id="educationExperienceResultMap" type="EducationExperience">
         <id property="id" column="education_experience_id"/>
         <result property="school" column="education_experience_school"/>

@@ -1,18 +1,12 @@
 package org.lieying.web.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.lieying.bean.JobHunter;
-import org.lieying.bean.JobHunterReport;
-import org.lieying.bean.Resume;
-import org.lieying.service.JobHunterReportService;
-import org.lieying.service.JobHunterService;
-import org.lieying.service.ResumeService;
+
+import org.lieying.bean.*;
+import org.lieying.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 //@CrossOrigin
@@ -25,6 +19,18 @@ public class JobHunterController {
     private JobHunterReportService jobHunterReportService;
     @Autowired
     private ResumeService resumeService;
+
+    @Autowired
+    private VolunteerExperienceService volunteerExperienceService;
+    @Autowired
+    private ProjectExperienceService projectExperienceService;
+    @Autowired
+    private CredentialService credentialService;
+
+    @Autowired
+    private EducationExperienceService educationExperienceService;
+    @Autowired
+    private InternshipExperienceService internshipExperienceService;
 
     /*
      *   查询所有求职者信息
@@ -62,7 +68,92 @@ public class JobHunterController {
         return JSON.toJSONString(resumeService.queryResumeById(resumeId));
     }
 
+    /*
+    * 添加简历
+    * */
+    @PostMapping(value = "/resume/add", produces = "text/plain;charset=UTF-8")
+    public String addResume(@RequestBody Resume resume){
+        return JSON.toJSONString(resumeService.addResume(resume));
+    }
 
+    /*
+    * 更新简历
+    * */
+    @PostMapping(value = "/resume/update",produces = "text/plain;charset=UTF-8")
+    public String updateResume(@RequestBody Resume resume){
+        return JSON.toJSONString(resumeService.modifyResume(resume));
+    }
+    /*
+    * 添加志愿经历
+    * */
+    @PostMapping(value = "/resume/volunteer/save", produces = "application/plain;charset=UTF-8")
+    public String addVolunteerExperience(@RequestBody VolunteerExperience volunteerExperience){
+        return JSON.toJSONString(volunteerExperienceService.addVolunteerExperience(volunteerExperience));
+    }
+    /*
+     * 更新志愿经历
+     * */
+    @PostMapping(value = "/resume/volunteer/update", produces = "application/plain;charset=UTF-8")
+    public String updateVolunteerExperience(@RequestBody VolunteerExperience volunteerExperience){
+        return JSON.toJSONString(volunteerExperienceService.modifyVolunteerExperience(volunteerExperience));
+    }
+    /*
+     * 添加项目经历
+     * */
+    @PostMapping(value = "/resume/project/save", produces = "application/plain;charset=UTF-8")
+    public String addProjectExperience(@RequestBody ProjectExperience projectExperience){
+        return JSON.toJSONString(projectExperienceService.addProjectExperience(projectExperience));
+    }
+    /*
+     * 更新项目经历
+     * */
+    @PostMapping(value = "/resume/project/update", produces = "application/plain;charset=UTF-8")
+    public String updateProjectExperience(@RequestBody ProjectExperience projectExperience){
+        return JSON.toJSONString(projectExperienceService.modifyProjectExperience(projectExperience));
+    }
+    /*
+     * 添加  实习经历
+     * */
+    @PostMapping(value = "/resume/internship/save", produces = "application/plain;charset=UTF-8")
+    public String addInternshipExperience(@RequestBody InternshipExperience internshipExperience){
+        return JSON.toJSONString(internshipExperienceService.addInternshipExperience(internshipExperience));
+    }
+    /*
+    * 更新实习经历
+    * */
+    @PostMapping(value = "/resume/internship/update", produces = "application/plain;charset=UTF-8")
+    public String updateInternshipExperience(@RequestBody InternshipExperience internshipExperience){
+        return JSON.toJSONString(internshipExperienceService.modifyInternshipExperience(internshipExperience));
+    }
+
+    /*
+     * 添加  资格证书
+     * */
+    @PostMapping(value = "/resume/credential/save", produces = "application/plain;charset=UTF-8")
+    public String addCredential(@RequestBody Credential credential){
+        return JSON.toJSONString(credentialService.addCredential(credential));
+    }
+    /*
+     * 更新 资格证书
+     * */
+    @PostMapping(value = "/resume/credential/update", produces = "application/plain;charset=UTF-8")
+    public String updateCredential(@RequestBody Credential credential){
+        return JSON.toJSONString(credentialService.modifyCredential(credential));
+    }
+    /*
+     * 添加  教育经历
+     * */
+    @PostMapping(value = "/resume/education/save", produces = "application/plain;charset=UTF-8")
+    public String saveEducationExperience(@RequestBody EducationExperience educationExperience){
+        return JSON.toJSONString(educationExperienceService.addEducationExperience(educationExperience));
+    }
+    /*
+     * 更新 教育经历
+     * */
+    @PostMapping(value = "/resume/education/update", produces = "application/plain;charset=UTF-8")
+    public String updateEducationExperience(@RequestBody EducationExperience educationExperience){
+        return JSON.toJSONString(educationExperienceService.updateEducationExperience(educationExperience));
+    }
     /*
     * 求职者登录
     * */
@@ -113,15 +204,11 @@ public class JobHunterController {
     }
 
     /*
-    *
     * 更新举报信息
-    *
     * */
     @PostMapping(value = "/report/update", produces = "text/plain;charset=UTF-8")
     public String updateJobHunterReport(@RequestBody JobHunterReport jobHunterReport) {
         //System.out.println(jobHunterReport);
         return JSON.toJSONString(jobHunterReportService.updateJobHunterReport(jobHunterReport));
     }
-
-
 }

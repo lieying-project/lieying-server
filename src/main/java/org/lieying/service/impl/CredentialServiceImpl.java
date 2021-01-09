@@ -1,5 +1,6 @@
 package org.lieying.service.impl;
 
+import org.lieying.bean.Credential;
 import org.lieying.dao.CredentialMapper;
 import org.lieying.service.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,22 @@ public class CredentialServiceImpl implements CredentialService {
 
 
     @Override
-    public Boolean addCredential(String name, String photo, int resumeId) {
-        return credentialMapper.insertCredential(name,photo,resumeId)==1;
+    public Boolean addCredential(Credential credential) {
+        try {
+            return credentialMapper.insertCredential(credential.getName(),credential.getPhoto(),credential.getResume().getId())==1;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean modifyCredential(Credential credential) {
+        try {
+            return credentialMapper.updateCredential(credential.getId(),credential.getName(),credential.getPhoto(),credential.getResume().getId())==1;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }
