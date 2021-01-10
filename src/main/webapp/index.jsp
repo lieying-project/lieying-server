@@ -7,10 +7,10 @@
 <body>
 
 
-<%--<form action="/file/upload" method="post" enctype="multipart/form-data">--%>
-<%--    <input type="file"  name="file"/>--%>
-<%--    <input type="submit" value="提交"/>--%>
-<%--</form>--%>
+<form action="file/upload" method="post" enctype="multipart/form-data">
+    <input type="file"  name="file"/>
+    <input type="submit" value="提交"/>
+</form>
 
 <%--    websocket Demo---- user000 <br/>--%>
 <%--    <input id="text" type="text"/>--%>

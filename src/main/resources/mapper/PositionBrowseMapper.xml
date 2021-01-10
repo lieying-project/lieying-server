@@ -14,7 +14,12 @@
     <select id="selectPositionBrowsesByJobHunterId" parameterType="int" resultMap="jobHunterBrowseResultMap">
         select * from position_browse where job_hunter_id =#{job_hunter_id}
     </select>
-
+    <select id="selectDetailPositionBrowsesByJobHunterId" parameterType="int" resultMap="jobHunterPositionBrowseResultMap">
+        select * from position_browse where job_hunter_id =#{job_hunter_id}
+    </select>
+    <select id="selectAllPositionBrowses"  resultMap="jobHunterPositionBrowseResultMap">
+        select * from position_browse
+    </select>
     <insert id="insertPositionBrowse">
         insert into position_browse(position_browse_created_time,job_hunter_id,position_id)
         values(#{position_browse_created_time},#{job_hunter_id},#{position_id})

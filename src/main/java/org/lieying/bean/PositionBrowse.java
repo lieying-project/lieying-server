@@ -27,4 +27,11 @@ public class PositionBrowse implements Serializable {
     @ManyToOne(targetEntity = Position.class)
     @JoinColumn(name="position_id")
     private Position position;
+
+
+    //指数
+    private Integer index;
+
+    private Integer jobHunterId;
+    private Integer positionId;
 }

@@ -68,12 +68,12 @@ public class TestServiceAdd {
         System.out.println(jobHunterService.addJobHunter("username1","password1","phone1"));
     }
 
-    @Test
-    public void testUpdateJobHunter(){
-        System.out.println(jobHunterService.updateJobHunter(25,"25jobhunter","abc123456","25jobhunter@lieying.com",
-                "18791223132","25jonbss","男",new Date(),"photo","博士后",
-                "INERR","ADDRWE"));
-    }
+//    @Test
+//    public void testUpdateJobHunter(){
+//        System.out.println(jobHunterService.updateJobHunter(25,"25jobhunter","abc123456","25jobhunter@lieying.com",
+//                "18791223132","25jonbss","男",new Date(),"photo","博士后",
+//                "INERR","ADDRWE"));
+//    }
 
     @Test
     public void testAddRecruiter(){

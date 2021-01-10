@@ -55,6 +55,7 @@ public class PositionController {
      *  @param   financingStageId     融资阶段id
      *  @param   positionPublishTime  职位发布时间
      */
+
     @RequestMapping(value = "", produces = "text/plain;charset=UTF-8")
     public String getPositionsByCriteria(@RequestParam(value = "keyword", required = false) String keyword,
                                          @RequestParam(value = "cityId", required = false) Integer cityId,
@@ -99,6 +100,7 @@ public class PositionController {
         System.out.println(position);
         return JSON.toJSONString(positionService.addPosition(position));
     }
+
 
     /*更新职位
     * @param position 职位信息
@@ -166,6 +168,13 @@ public class PositionController {
     public String getBrowsedPositionsByJobHunterId(@PathVariable int jobHunterId){
         return JSON.toJSONString(positionService.queryBrowsedPositionsByJobHunterId(jobHunterId));
     }
-
+    /*
+     *  推荐职位
+     *
+     */
+    @RequestMapping(value = "/recommend",produces = "text/plain;charset=UTF-8")
+    public String recommendPosition(@RequestParam("jobHunterId") Integer jobHunterId){
+        return JSON.toJSONString(positionService.recomendPosition(jobHunterId));
+    }
 
 }

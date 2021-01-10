@@ -15,9 +15,7 @@ public interface JobHunterService {
 
     Boolean addJobHunter(String username, String password, String phone);
 
-    Boolean updateJobHunter(int id, String username, String password,
-                            String email, String phone, String name, String sex,
-                            Date birthday, String photo, String education,
-                            String interest, String address);
+    Boolean modifyJobHunter(JobHunter jobHunter);
+
 
 }
