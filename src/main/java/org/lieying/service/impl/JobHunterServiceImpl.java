@@ -55,12 +55,17 @@ public class JobHunterServiceImpl  implements JobHunterService {
     }
 
     @Override
-    public Boolean updateJobHunter(int id, String username, String password, String email, String phone, String name, String sex, Date birthday, String photo, String education, String interest, String address) {
+    public Boolean modifyJobHunter(JobHunter jobHunter) {
+
         try {
-            return jobHunterMapper.updateJobHunter( id,  username,  password,
-                    email,  phone,  name,  sex,
-                    birthday,  photo,  education,
-                    interest,  address)==1;
+            return jobHunterMapper.updateJobHunter(jobHunter.getId(),
+                    jobHunter.getUsername(),jobHunter.getPassword(),
+                    jobHunter.getEmail(),jobHunter.getPhone(),
+                    jobHunter.getName(),jobHunter.getSex(),jobHunter.getBirthday(),
+                    jobHunter.getPhoto(),
+                    jobHunter.getEducation(),
+                    jobHunter.getInterest(),
+                    jobHunter.getAddress())==1;
         } catch (Exception e){
             e.printStackTrace();
             return  false;

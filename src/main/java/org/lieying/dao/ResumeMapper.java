@@ -22,7 +22,7 @@ public interface ResumeMapper {
              @Param("resume_work_address")String workAddress,
              @Param("resume_work_experience")String workExperience,
              @Param("resume_project_experience")String projectExperience,
-             @Param("resume_social_homepage")String socialHomepage,
+
              @Param("resume_volunteer_service_experience")String volunteerServiceExperience,
              @Param("resume_enclosure")String enclosure,
              @Param("resume_reject_reason")String rejectReason,
@@ -42,7 +42,6 @@ public interface ResumeMapper {
                       @Param("resume_work_address")String workAddress,
                       @Param("resume_work_experience")String workExperience,
                       @Param("resume_project_experience")String projectExperience,
-                      @Param("resume_social_homepage")String socialHomepage,
                       @Param("resume_volunteer_service_experience")String volunteerServiceExperience,
                       @Param("resume_enclosure")String enclosure,
                       @Param("resume_reject_reason")String rejectReason,

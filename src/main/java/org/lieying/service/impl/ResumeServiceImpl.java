@@ -47,7 +47,7 @@ public class ResumeServiceImpl implements ResumeService {
                  resume.getId(),resume.getName(),resume.getEducation(),resume.getAge(),
                   resume.getAdvantage(),resume.getExpectedCity(),resume.getExpectedPosition(),
                   resume.getExpectedSalary(),resume.getWorkAddress(),resume.getWorkExperience(),
-                  resume.getProjectExperience(),resume.getSocialHomepage(),resume.getVolunteerServiceExperience(),
+                  resume.getProjectExperience(),resume.getVolunteerServiceExperience(),
                   resume.getEnclosure(),resume.getRejectReason(),resume.getCreatedTime(),resume.getUpdatedTime(),
                   resume.getDeliveredTime(),resume.getState(),jobHunterId,positionId) == 1 ;
       }catch (Exception e){
@@ -70,7 +70,7 @@ public class ResumeServiceImpl implements ResumeService {
        return resumeMapper.insertResume( resume.getName(),  resume.getEducation(),  resume.getAge(),  resume.getAdvantage(),
                resume.getExpectedCity(),  resume.getExpectedPosition(),
                resume.getExpectedSalary(), resume.getWorkAddress(),  resume.getWorkExperience(),
-               resume.getProjectExperience(),  resume.getSocialHomepage(),  resume.getVolunteerServiceExperience(),
+               resume.getProjectExperience(),  resume.getVolunteerServiceExperience(),
                resume.getEnclosure(),  resume.getRejectReason(),  resume.getCreatedTime(),  resume.getUpdatedTime(),
                resume.getDeliveredTime(),  resume.getState(),jobHunterId,positionId)==1;
     }

@@ -2,6 +2,7 @@ package org.lieying.service;
 
 import com.github.pagehelper.PageInfo;
 import org.lieying.bean.Position;
+import org.lieying.bean.PositionBrowse;
 
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface PositionService {
     Boolean removePosition(int id);
     List<Position> queryHotPositionsByCriteria(int cityId,int positionCategoryId);
     List<Position> queryBrowsedPositionsByJobHunterId(int jobHunterId);
+
+    List<Position> recomendPosition(int jobHunterId);
 }

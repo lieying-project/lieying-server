@@ -32,6 +32,10 @@ public class JobHunterController {
     @Autowired
     private InternshipExperienceService internshipExperienceService;
 
+    @Autowired
+    private SocialHomepageService socialHomepageService;
+
+
     /*
      *   查询所有求职者信息
      */
@@ -154,6 +158,24 @@ public class JobHunterController {
     public String updateEducationExperience(@RequestBody EducationExperience educationExperience){
         return JSON.toJSONString(educationExperienceService.updateEducationExperience(educationExperience));
     }
+
+
+    /*
+    * 添加社交主页
+    * */
+    @PostMapping(value = "/resume/socialHomepage/save", produces = "application/plain;charset=UTF-8")
+    public String saveSocialHomepage(@RequestBody SocialHomepage socialHomepage){
+        return JSON.toJSONString(socialHomepageService.addSocialhomepage(socialHomepage));
+    }
+
+    /*
+    * 更新社交主页
+    * */
+    @PostMapping(value = "/resume/socialHomepage/update", produces = "application/plain;charset=UTF-8")
+    public String updateSocialHomepage(@RequestBody SocialHomepage socialHomepage){
+        return JSON.toJSONString(socialHomepageService.modifySocialhomepage(socialHomepage));
+    }
+
     /*
     * 求职者登录
     * */
@@ -184,6 +206,15 @@ public class JobHunterController {
     public String jobHunterRegister(@RequestBody JobHunter jobHunter){
         return JSON.toJSONString(jobHunterService.addJobHunter(jobHunter.getUsername(),jobHunter.getPassword(),jobHunter.getPhone()));
     }
+
+    /*
+     * 更新求职者
+     * */
+    @PostMapping(value = "/update",produces = "text/plain;charset=UTF-8")
+    public String updateJobHunter(@RequestBody JobHunter jobHunter){
+        return JSON.toJSONString(jobHunterService.modifyJobHunter(jobHunter));
+    }
+
     /*
      *  根据求职者id和职位id获取举报信息
      *  @param  jobHunterId  求职者id

@@ -6,7 +6,6 @@
     <select id="selectResumeById" resultMap="resumeResultMap" parameterType="int">
         select * from resume where resume_id = #{id} limit 1
     </select>
-
     <select id="selectResumesByJobHunterId" resultMap="jobHunterResumeResultMap" parameterType="int">
         select * from resume where job_hunter_id = #{job_hunter_id}
     </select>
@@ -23,7 +22,6 @@
         <if test="resume_expected_position!=null">,resume_expected_position=#{resume_expected_position}</if>
         <if test="resume_expected_salary!=null">,resume_expected_salary=#{resume_expected_salary}</if>
         <if test="resume_work_address!=null">,resume_work_address=#{resume_work_address}</if>
-        <if test="resume_social_homepage!=null">,resume_social_homepage=#{resume_social_homepage}</if>
         <if test="resume_project_experience!=null">,resume_project_experience=#{resume_project_experience}</if>
         <if test="resume_volunteer_service_experience!=null">,resume_volunteer_service_experience=#{resume_volunteer_service_experience}</if>
         <if test="resume_enclosure!=null">,resume_enclosure=#{resume_enclosure}</if>
@@ -42,8 +40,9 @@
         resume_social_homepage,resume_volunteer_service_experience,resume_enclosure,resume_reject_reason,
         resume_created_time,resume_updated_time,resume_delivered_time,resume_state,job_hunter_id,position_id)
         values(#{resume_name},#{resume_education},#{resume_age},#{resume_advantage},#{resume_expected_city},
-        #{resume_expected_position},#{resume_expected_salary},#{resume_work_address},#{resume_work_experience},#{resume_project_experience},
-        #{resume_social_homepage},#{resume_volunteer_service_experience},#{resume_enclosure},#{resume_reject_reason},
+        #{resume_expected_position},#{resume_expected_salary},#{resume_work_address},#{resume_work_experience},
+        #{resume_project_experience},
+        ,#{resume_volunteer_service_experience},#{resume_enclosure},#{resume_reject_reason},
         #{resume_created_time},#{resume_updated_time},#{resume_delivered_time},#{resume_state},#{job_hunter_id},#{position_id})
     </insert>
 
@@ -67,7 +66,6 @@
         <result property="expectedSalary" column="resume_expected_salary"/>
         <result property="workExperience" column="resume_work_experience"/>
         <result property="projectExperience" column="resume_project_experience"/>
-        <result property="socialHomepage" column="resume_social_homepage"/>
         <result property="volunteerServiceExperience" column="resume_volunteer_service_experience"/>
         <result property="enclosure" column="resume_enclosure"/>
         <result property="rejectReason" column="resume_reject_reason"/>
@@ -86,6 +84,8 @@
                     select="org.lieying.dao.InternshipExperienceMapper.selectInternshipExperiencesByResumeId"/>
         <collection property="projectExperiences" column="resume_id"
                     select="org.lieying.dao.ProjectExperienceMapper.selectProjectExperiencesByResumeId"/>
+        <collection property="socialHomepages" column="resume_id"
+                    select="org.lieying.dao.SocialHomepageMapper.selectHomepagesByResumeId"/>
     </resultMap>
 
     <resultMap id="positionResumeResultMap" type="Resume">
@@ -100,7 +100,6 @@
         <result property="expectedSalary" column="resume_expected_salary"/>
         <result property="workExperience" column="resume_work_experience"/>
         <result property="projectExperience" column="resume_project_experience"/>
-        <result property="socialHomepage" column="resume_social_homepage"/>
         <result property="volunteerServiceExperience" column="resume_volunteer_service_experience"/>
         <result property="enclosure" column="resume_enclosure"/>
         <result property="rejectReason" column="resume_reject_reason"/>
@@ -119,6 +118,8 @@
                     select="org.lieying.dao.InternshipExperienceMapper.selectInternshipExperiencesByResumeId"/>
         <collection property="projectExperiences" column="resume_id"
                     select="org.lieying.dao.ProjectExperienceMapper.selectProjectExperiencesByResumeId"/>
+        <collection property="socialHomepages" column="resume_id"
+                    select="org.lieying.dao.SocialHomepageMapper.selectHomepagesByResumeId"/>
     </resultMap>
     <resultMap id="resumeResultMap" type="Resume">
         <id property="id" column="resume_id"/>
@@ -132,7 +133,6 @@
         <result property="expectedSalary" column="resume_expected_salary"/>
         <result property="workExperience" column="resume_work_experience"/>
         <result property="projectExperience" column="resume_project_experience"/>
-        <result property="socialHomepage" column="resume_social_homepage"/>
         <result property="volunteerServiceExperience" column="resume_volunteer_service_experience"/>
         <result property="enclosure" column="resume_enclosure"/>
         <result property="rejectReason" column="resume_reject_reason"/>
@@ -152,6 +152,7 @@
                     select="org.lieying.dao.InternshipExperienceMapper.selectInternshipExperiencesByResumeId"/>
         <collection property="projectExperiences" column="resume_id"
                     select="org.lieying.dao.ProjectExperienceMapper.selectProjectExperiencesByResumeId"/>
-
+        <collection property="socialHomepages" column="resume_id"
+                    select="org.lieying.dao.SocialHomepageMapper.selectHomepagesByResumeId"/>
     </resultMap>
 </mapper>

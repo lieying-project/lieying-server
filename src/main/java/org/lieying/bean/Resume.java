@@ -58,13 +58,11 @@ public class Resume {
 	@Column(name="resume_project_experience",length=200)
 	private String projectExperience;
 
-	@Column(name="resume_social_homepage",length=1024)
-	private String socialHomepage;
 
 	@Column(name="resume_volunteer_service_experience",length=200)
 	private String volunteerServiceExperience;
 
-	@Column(name="resume_enclosure",length=1024)
+	@Column(name="resume_enclosure")
 	private String enclosure;
 
 	@Column(name="resume_reject_reason")
@@ -104,4 +102,6 @@ public class Resume {
 
 	@OneToMany(mappedBy="resume")
 	private Set<InternshipExperience> internshipExperiences;
+	@OneToMany(mappedBy="resume")
+	private Set<SocialHomepage> socialHomepages;
 }

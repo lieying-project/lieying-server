@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lieying.dao.SocialHomepageMapper">
+
+
+    <insert id="insertSocialHomepage">
+        insert into social_homepage(social_homepage_url, social_homepage_sign,
+                                    social_homepage_created_time, social_homepage_updated_time,
+                                      resume_id)
+        values (#{social_homepage_url}, #{social_homepage_sign},
+                #{social_homepage_created_time}, #{social_homepage_updated_time},
+                #{resume_id} )
+    </insert>
+    <update id="updateSocialHomepage">
+        update social_homepage set social_homepage_id=#{social_homepage_id}
+        <if test="social_homepage_url!=null">
+            ,social_homepage_url=#{social_homepage_url}
+        </if>
+        <if test="social_homepage_sign!=null">
+            ,social_homepage_sign=#{social_homepage_sign}
+        </if>
+        <if test="social_homepage_created_time!=null">
+            ,social_homepage_created_time=#{social_homepage_created_time}
+        </if>
+        <if test="social_homepage_updated_time!=null">
+            ,social_homepage_updated_time=#{social_homepage_updated_time}
+        </if>
+        <if test="resume_id!=null">
+            ,resume_id=#{resume_id}
+        </if>
+        where social_homepage_id=#{social_homepage_id}
+    </update>
+    <select id="selectHomepagesByResumeId" resultMap="socialHomepageResultMap" parameterType="int">
+        select * from social_homepage
+        where resume_id = #{id}
+    </select>
+    <resultMap id="socialHomepageResultMap" type="SocialHomepage">
+        <id property="id" column="social_homepage_id"/>
+        <result property="url" column="social_homepage_url"/>
+        <result property="sign" column="social_homepage_sign"/>
+        <result property="createdTime" column="social_homepage_created_time"/>
+        <result property="updatedTime" column="social_homepage_updated_time"/>
+    </resultMap>
+
+</mapper>
