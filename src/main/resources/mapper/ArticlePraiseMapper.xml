@@ -11,7 +11,6 @@
     <select id="selectArticlePraisesByJobHunterId" resultMap="jobHunterPraiseResultMap" parameterType="int">
         select * from article_praise where article_id = #{id}
     </select>
-
     <delete id="deleteArticlePraise" parameterType="int">
         delete from article_praise where article_praise_id=#{id}
     </delete>
@@ -25,13 +24,11 @@
         <result property="createdTime" column="article_praise_created_time"/>
         <association property="jobHunter" column="job_hunter_id" select="org.lieying.dao.JobHunterMapper.selectJobHunterById"/>
     </resultMap>
-
     <resultMap id="jobHunterPraiseResultMap" type="ArticlePraise">
         <id property="id" column="article_praise_id"/>
         <result property="createdTime" column="article_praise_created_time"/>
         <association property="article" column="article_id" select="org.lieying.dao.ArticleMapper.selectArticleById"/>
     </resultMap>
-
     <resultMap id="JobHunterPraiseArticleResultMap" type="ArticlePraise">
         <id property="id" column="article_praise_id"/>
         <result property="createdTime" column="article_praise_created_time"/>

@@ -51,6 +51,9 @@ public interface ResumeMapper {
                       @Param("resume_state")String state,
                       @Param("job_hunter_id")Integer jobHunterId,
                       @Param("position_id")Integer positionId);
+     int insertResume2(@Param("resume_name")String name,  @Param("job_hunter_id")Integer jobHunterId,
+                       @Param("resume_created_time")java.util.Date createdTime,
+                       @Param("resume_updated_time")java.util.Date updatedTime );
      int deleteResume(int id);
      int updateResumeNameById(@Param("resume_id") int id,
                               @Param("resume_name") String name);

@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
-
+@Table(name = "chat")
 @JsonIgnoreProperties(value = "handler")
 @Data
 @Alias("Chat")

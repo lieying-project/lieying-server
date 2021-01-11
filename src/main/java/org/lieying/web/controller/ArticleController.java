@@ -50,13 +50,13 @@ public class ArticleController {
         return JSON.toJSONString(articleService.queryAllArticlesByPage(page));
     }
 
-    @PostMapping(value = "/save",produces = "text/plain;charset=utf-8")
-    public String saveArticleComment(@RequestBody ArticleComment articleComment){
-       // System.out.println("articleComment:"+articleComment);
+
+    @PostMapping(value = "/comment/save",produces = "text/plain;charset=UTF-8")
+    public String saveArticleCommentRely(@RequestBody ArticleComment articleComment){
         return JSON.toJSONString(articleCommentService.addArticleComment(articleComment));
     }
 
-    @PostMapping(value = "/comment/save",produces = "text/plain;charset=UTF-8")
+    @PostMapping(value = "/comment/rely/save",produces = "text/plain;charset=UTF-8")
     public String saveArticleCommentRely(@RequestBody ArticleCommentRely articleCommentRely){
         return JSON.toJSONString(articleCommentRelyService.addArticleCommentRely(articleCommentRely));
     }
@@ -80,16 +80,20 @@ public class ArticleController {
         return JSON.toJSONString(articleCollectService.removeArticleCollect(id));
     }
 
-
-    @PostMapping(value = "/save",produces = "text/plain;charset=UTF-8")
+    @PostMapping(value = "/save",produces = "text/plain;charset=utf-8")
     public String saveArticle(@RequestBody Article article){
-
-        Boolean result=articleService.addArticle(article);
-        System.out.println(article);
-        if (result){
-            return String.valueOf(article.getId());
-        }
-        return  JSON.toJSONString(result);
+        // System.out.println("articleComment:"+articleComment);
+        return JSON.toJSONString(articleService.addArticle(article));
     }
+//    @PostMapping(value = "/save",produces = "text/plain;charset=UTF-8")
+//    public String saveArticle(@RequestBody Article article){
+//
+//        Boolean result=articleService.addArticle(article);
+//        System.out.println(article);
+//        if (result){
+//            return String.valueOf(article.getId());
+//        }
+//        return  JSON.toJSONString(result);
+//    }
 
 }

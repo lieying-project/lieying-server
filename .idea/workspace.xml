@@ -7,36 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9719495-74f7-44ad-8140-d97fbd3e8d83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/RelateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/SocialHomepage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/SocialHomepageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/SocialHomepageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/SocialHomepageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SocialHomepageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/TestSendCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/TestSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionBrowse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionBrowse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Resume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Resume.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/PositionBrowseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/PositionBrowseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Chat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/ResumeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/ResumeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/JobHunterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/JobHunterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/PositionBrowseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/PositionBrowseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/PositionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/JobHunterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/JobHunterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/PositionBrowseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/PositionBrowseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/PositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/PositionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/ResumeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PositionBrowseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PositionBrowseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/WebSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleCommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticlePraiseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticlePraiseMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ResumeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ResumeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/TestServiceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/TestServiceAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <list id="c0ff6b04-e785-4b86-a7cf-487a6a7fee2d" name="second commit" comment="second commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,10 +124,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/lieying/bean" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/lieying-1.0-SNAPSHOT/resources/uploads" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -160,11 +145,11 @@
       <recent name="org.lieying.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\java\lieying\target\lieying-1.0-SNAPSHOT\resources\uploads" />
+      <recent name="E:\project\java\lieying\src\main\webapp\resources\uploads" />
       <recent name="E:\project\java\lieying\src\main\java\org\lieying\bean" />
       <recent name="E:\project\java\lieying\src\main\resources\mapper" />
-      <recent name="E:\project\java\lieying\src\main\webapp\resources\uploads" />
       <recent name="E:\project\java\lieying\src\main\webapp\resources\images" />
-      <recent name="E:\project\java\lieying\src\main\resources\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -412,7 +397,7 @@
       <workItem from="1609557006792" duration="6047000" />
       <workItem from="1609637713046" duration="8405000" />
       <workItem from="1609826956605" duration="45730000" />
-      <workItem from="1610028073078" duration="41074000" />
+      <workItem from="1610028073078" duration="79797000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1600070288260</created>
@@ -542,6 +527,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610179968262" />
+    <state x="481" y="342" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1610271940490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="342" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1610271940490" />
     <state x="571" y="281" width="393" height="265" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610174192123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -562,38 +551,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="595" y="314" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1609999230821" />
-    <state width="1493" height="259" key="GridCell.Tab.0.bottom" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.0.bottom" timestamp="1610333711211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.0.center" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610333711211" />
+    <state width="1493" height="270" key="GridCell.Tab.0.center" timestamp="1610333711209">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.0.left" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610333711209" />
+    <state width="1493" height="270" key="GridCell.Tab.0.left" timestamp="1610333711208">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.0.right" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610333711208" />
+    <state width="1493" height="270" key="GridCell.Tab.0.right" timestamp="1610333711211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.1.bottom" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610333711211" />
+    <state width="1493" height="270" key="GridCell.Tab.1.bottom" timestamp="1610333711213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.1.center" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610333711213" />
+    <state width="1493" height="270" key="GridCell.Tab.1.center" timestamp="1610333711212">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.1.left" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610333711212" />
+    <state width="1493" height="270" key="GridCell.Tab.1.left" timestamp="1610333711211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
-    <state width="1493" height="259" key="GridCell.Tab.1.right" timestamp="1610240285867">
+    <state width="1493" height="270" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610333711211" />
+    <state width="1493" height="270" key="GridCell.Tab.1.right" timestamp="1610333711212">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610240285867" />
+    <state width="1493" height="270" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610333711212" />
     <state width="1221" height="266" key="GridCell.Tab.11.bottom" timestamp="1604709977789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -642,30 +631,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="862" height="204" key="GridCell.Tab.19.right/0.0.1536.824@0.0.1536.824" timestamp="1607164604127" />
-    <state width="1493" height="259" key="GridCell.Tab.2.bottom" timestamp="1610240285868">
+    <state width="1493" height="270" key="GridCell.Tab.2.bottom" timestamp="1610333711213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610240285868" />
-    <state width="1493" height="259" key="GridCell.Tab.2.center" timestamp="1610240285868">
+    <state width="1493" height="270" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610333711213" />
+    <state width="1493" height="270" key="GridCell.Tab.2.center" timestamp="1610333711213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610240285868" />
-    <state width="1493" height="259" key="GridCell.Tab.2.left" timestamp="1610240285868">
+    <state width="1493" height="270" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610333711213" />
+    <state width="1493" height="270" key="GridCell.Tab.2.left" timestamp="1610333711213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610240285868" />
-    <state width="1493" height="259" key="GridCell.Tab.2.right" timestamp="1610240285868">
+    <state width="1493" height="270" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610333711213" />
+    <state width="1493" height="270" key="GridCell.Tab.2.right" timestamp="1610333711213">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="259" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610240285868" />
-    <state x="299" y="70" key="Maven.ArtifactSearchDialog" timestamp="1609985872590">
+    <state width="1493" height="270" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610333711213" />
+    <state x="299" y="70" key="Maven.ArtifactSearchDialog" timestamp="1610303738737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="299" y="70" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1609985872590" />
-    <state x="103" y="0" key="SettingsEditor" timestamp="1610167235868">
+    <state x="299" y="70" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1610303738737" />
+    <state x="103" y="0" key="SettingsEditor" timestamp="1610291310964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="103" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610167235868" />
+    <state x="103" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610291310964" />
     <state width="82" height="441" key="SqlResolveConfigurable" timestamp="1602916086041">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -698,10 +687,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604392753923" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610162398402">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610242158640">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610162398402" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610242158640" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -743,14 +732,6 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/WebSocket.java</url>
-          <line>145</line>
-          <properties class="org.lieying.web.controller.WebSocket" method="getChatsByRecruiterId">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java</url>

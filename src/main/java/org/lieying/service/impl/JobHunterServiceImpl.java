@@ -47,7 +47,7 @@ public class JobHunterServiceImpl  implements JobHunterService {
     @Override
     public Boolean addJobHunter(String username, String password,String phone) {
         try{
-           return  jobHunterMapper.insertJobHunter(username,password,username+"@lieying.cn",phone,username,"男",new Date(),"imgs/user.png","","interest","address")==1;
+           return  jobHunterMapper.insertJobHunter(username,password,username+"@lieying.cn",phone,username,"男",new Date(),"http://localhost:8080/lieying/uploads/user.png","","interest","address")==1;
         }catch (Exception e){
             e.printStackTrace();
             return  false;

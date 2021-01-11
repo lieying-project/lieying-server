@@ -22,7 +22,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 //@CrossOrigin
 @RestController
-@RequestMapping("/chat")
+
 @ServerEndpoint(value = "/websocket/{userId}/{userType}")
 public class WebSocket {
     private static ChatService chatService;
@@ -112,78 +112,11 @@ public class WebSocket {
         logger.debug("用户{}的连接发送错误", userId);
         error.printStackTrace();
     }
-    @RequestMapping("/{jobHunterId}/{recruiterId}")
-    public String getChatsByJobHunterIdAndRecruiterId(@PathVariable int jobHunterId,
-                                                          @PathVariable int recruiterId){
-        List<Chat> chats=WebSocket.chatService.findChatsByJobHunterIdAndRecruiterId(jobHunterId,recruiterId);
-
-        for (Chat chat:chats){
-            Chat chat1=new Chat();
-            chat1.setSentDate(chat.getSentDate());
-            chat1.setJobHunter(chat.getJobHunter());
-            chat1.setRecruiter(chat.getRecruiter());
-            chat1.setSenderFlag(chat.getSenderFlag());
-            chat1.setSentDate(chat.getSentDate());
-            chat=chat1;
-
-        }
-        System.out.println(chats);
-        return JSON.toJSONString(chats);
-    }
-
-    @RequestMapping(value="/jobHunter/{jobHunterId}", produces = "text/plain;charset=UTF-8")
-    public String getChatsByJobHunterId(@PathVariable int jobHunterId){
-        List<Chat> chats=WebSocket.chatService.findChatsByJobHunterId(jobHunterId);
-        for (Chat chat:chats){
-            chat.getRecruiter();
-            chat.getJobHunter();
-        }
-        System.out.println(chats);
-        return JSON.toJSONString(chats);
-    }
-
-    @RequestMapping(value="/recruiter/{recruiterId}",produces = "text/plain;charset=UTF-8")
-    public String getChatsByRecruiterId(@PathVariable int recruiterId){
-        List<Chat> chats=WebSocket.chatService.findChatsByRecruiterId(recruiterId);
-        for (Chat chat:chats){
-            chat.getRecruiter();
-            chat.getJobHunter();
-        }
-        System.out.println(chats);
-        return JSON.toJSONString(chats);
-    }
-
-    @RequestMapping(value="/jobHunter/{jobHunterId}/recruiters", produces = "text/plain;charset=UTF-8")
-    public String getChatRecruitersByJobHunterId(@PathVariable int jobHunterId){
-        List<Chat> chats=WebSocket.chatService.findChatsByJobHunterId(jobHunterId);
-        List<Recruiter> recruiters=new ArrayList<>();
-        Set<Integer> ids=new HashSet<>();
-        for (Chat chat:chats){
-            if (ids.add(chat.getRecruiter().getId())){
-                recruiters.add(chat.getRecruiter());
-            }
-        }
-        System.out.println(recruiters);
-        return JSON.toJSONString(recruiters);
-    }
-    @RequestMapping(value="/recruiter/{recruiterId}/jobHunters",produces = "text/plain;charset=UTF-8")
-    public String getChatJobHuntersByRecruiterId(@PathVariable int recruiterId){
-        List<Chat> chats=WebSocket.chatService.findChatsByRecruiterId(recruiterId);
-       List<JobHunter> jobHunters=new ArrayList<>();
-       Set<Integer> ids=new HashSet<>();
-        for (Chat chat:chats){
-            if (ids.add(chat.getJobHunter().getId())){
-                jobHunters.add(chat.getJobHunter());
-
-            }
-        }
-        System.out.println(jobHunters);
-        return JSON.toJSONString(jobHunters);
-    }
 
     public void sendMessage(String message) throws IOException {
         this.session.getBasicRemote().sendText(message);
     }
+
 
 
 }

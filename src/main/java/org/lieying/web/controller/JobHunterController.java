@@ -75,8 +75,9 @@ public class JobHunterController {
     /*
     * 添加简历
     * */
-    @PostMapping(value = "/resume/add", produces = "text/plain;charset=UTF-8")
+    @PostMapping(value = "/resume/save", produces = "text/plain;charset=UTF-8")
     public String addResume(@RequestBody Resume resume){
+        System.out.println(resume);
         return JSON.toJSONString(resumeService.addResume(resume));
     }
 
@@ -149,6 +150,7 @@ public class JobHunterController {
      * */
     @PostMapping(value = "/resume/education/save", produces = "application/plain;charset=UTF-8")
     public String saveEducationExperience(@RequestBody EducationExperience educationExperience){
+        System.out.println(educationExperience);
         return JSON.toJSONString(educationExperienceService.addEducationExperience(educationExperience));
     }
     /*

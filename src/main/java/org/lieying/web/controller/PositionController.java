@@ -170,7 +170,6 @@ public class PositionController {
     }
     /*
      *  推荐职位
-     *
      */
     @RequestMapping(value = "/recommend",produces = "text/plain;charset=UTF-8")
     public String recommendPosition(@RequestParam("jobHunterId") Integer jobHunterId){

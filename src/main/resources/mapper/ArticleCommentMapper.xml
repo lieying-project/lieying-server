@@ -16,8 +16,6 @@
         values(#{article_comment_content},#{article_comment_created_time},#{job_hunter_id},#{article_id})
     </insert>
 
-
-
     <resultMap id="articleCommentResultMap" type="ArticleComment">
         <id property="id" column="article_comment_id"/>
         <result property="content" column="article_comment_content"/>
