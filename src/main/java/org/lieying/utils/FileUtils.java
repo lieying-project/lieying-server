@@ -1,10 +1,12 @@
 package org.lieying.utils;
 
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.util.UUID;
 
 public class FileUtils {
 
@@ -24,6 +26,9 @@ public class FileUtils {
                 return  false;
             }
         }
+
+
+
         return  true;
     }
 

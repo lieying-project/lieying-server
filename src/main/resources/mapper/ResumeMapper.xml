@@ -45,7 +45,10 @@
         ,#{resume_volunteer_service_experience},#{resume_enclosure},#{resume_reject_reason},
         #{resume_created_time},#{resume_updated_time},#{resume_delivered_time},#{resume_state},#{job_hunter_id},#{position_id})
     </insert>
-
+    <insert id="insertResume2">
+        insert resume(resume_name,job_hunter_id,resume_created_time,resume_updated_time)
+        values(#{resume_name},#{job_hunter_id},  #{resume_created_time},#{resume_updated_time})
+    </insert>
 
     <delete id="deleteResume" parameterType="int">
         delete from resume where resume_id=#{resume_id}

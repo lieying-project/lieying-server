@@ -67,6 +67,10 @@ public class ResumeServiceImpl implements ResumeService {
         if (resume.getPosition()!=null){
             positionId=resume.getPosition().getId();
         }
+        if (positionId==null){
+
+            return resumeMapper.insertResume2( resume.getName(),jobHunterId,new Date(),new Date())==1;
+        }
        return resumeMapper.insertResume( resume.getName(),  resume.getEducation(),  resume.getAge(),  resume.getAdvantage(),
                resume.getExpectedCity(),  resume.getExpectedPosition(),
                resume.getExpectedSalary(), resume.getWorkAddress(),  resume.getWorkExperience(),
