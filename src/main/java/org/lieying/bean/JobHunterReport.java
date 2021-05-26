@@ -1,10 +1,9 @@
 package org.lieying.bean;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,7 +12,7 @@ import java.io.Serializable;
 @JsonIgnoreProperties(value = "handler")
 @Table(name = "job_hunter_report")
 @Data
-@Alias("JobHunterReport")
+
 public class JobHunterReport implements Serializable {
 
 	@Id

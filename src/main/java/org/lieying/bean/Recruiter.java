@@ -2,14 +2,13 @@ package org.lieying.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 
 import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +17,7 @@ import javax.persistence.Table;
 @JsonIgnoreProperties(value = "handler")
 @Table(name = "recruiter")
 @Data
-@Alias("Recruiter")
+
 public class Recruiter implements Serializable {
 
 	@Id

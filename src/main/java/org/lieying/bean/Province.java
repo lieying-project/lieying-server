@@ -1,13 +1,12 @@
 package org.lieying.bean;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Table(name = "province")
 @Data
-@Alias("Province")
+
 public class Province {
     @Id
     @Column(name="province_id")

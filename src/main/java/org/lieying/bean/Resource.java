@@ -3,7 +3,7 @@ package org.lieying.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +11,7 @@ import java.util.Set;
 @JsonIgnoreProperties(value = "handler")
 @Table(name = "resource")
 @Data
-@Alias("Resource")
+
 public class Resource implements Serializable {
 	@Id
 	@Column(name = "resource_id")

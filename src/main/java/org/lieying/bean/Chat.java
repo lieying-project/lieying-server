@@ -1,19 +1,17 @@
 package org.lieying.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import lombok.Data;
-import org.apache.ibatis.type.Alias;
-import org.omg.PortableInterceptor.INACTIVE;
 
-import java.io.Serializable;
+import lombok.Data;
+
+
 import java.util.Date;
 
 import javax.persistence.*;
 @Table(name = "chat")
 @JsonIgnoreProperties(value = "handler")
 @Data
-@Alias("Chat")
+
 public class Chat  {
 
 	@Id

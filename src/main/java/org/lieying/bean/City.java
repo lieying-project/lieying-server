@@ -1,15 +1,14 @@
 package org.lieying.bean;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Table(name = "city")
 @Data
-@Alias("City")
+
 public class City {
     @Id
     @Column(name="city_id")

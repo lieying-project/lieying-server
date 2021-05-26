@@ -1,13 +1,13 @@
 package org.lieying.bean;
 
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 
 import javax.persistence.*;
 
 @Table(name="social_homepage")
 @Data
-@Alias("SocialHomepage")
+
 public class SocialHomepage {
     @Id
     @Column(name="social_homepage_id")

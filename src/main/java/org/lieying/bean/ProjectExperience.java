@@ -2,7 +2,7 @@ package org.lieying.bean;
 
 
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Table(name="project_experience")
 @Data
-@Alias("ProjectExperience")
+
 public class ProjectExperience implements Serializable {
 
 	@Id

@@ -3,14 +3,14 @@ package org.lieying.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
 @JsonIgnoreProperties(value = "handler")
 @Table(name = "credential")
 @Data
-@Alias("Credential")
+
 public class Credential implements Serializable {
 	@Id
 	@Column(name = "credential_id")

@@ -2,14 +2,13 @@ package org.lieying.bean;
 
 
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Table(name="education_experience")
 @Data
-@Alias("EducationExperience")
+
 public class EducationExperience implements Serializable {
 
 	@Id

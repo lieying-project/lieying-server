@@ -1,11 +1,11 @@
 package org.lieying.bean;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 import javax.persistence.*;
 import java.util.Date;
 @Table(name="internship_experience")
 @Data
-@Alias("InternshipExperience")
+
 public class InternshipExperience {
 
     @Id

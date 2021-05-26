@@ -3,13 +3,13 @@ package org.lieying.bean;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
-import org.apache.ibatis.type.Alias;
+
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 @JsonIgnoreProperties(value="handler")
-@Alias("ArticleCommentRely")
+
 @Data
 public class ArticleCommentRely {
 

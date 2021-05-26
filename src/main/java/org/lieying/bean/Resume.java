@@ -2,7 +2,7 @@ package org.lieying.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import org.apache.ibatis.type.Alias;
+
 
 import java.util.Date;
 import java.util.Set;
@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @JsonIgnoreProperties(value = "handler")
 @Data
 @Table(name="resume")
-@Alias("Resume")
+
 public class Resume {
 
 	@Id
