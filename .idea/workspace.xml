@@ -10,62 +10,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9719495-74f7-44ad-8140-d97fbd3e8d83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/RecruitmentApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/CommonResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ResultEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/config/StaticResourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalina.base_IS_UNDEFINED/logs/common-default.log" beforeDir="false" afterPath="$PROJECT_DIR$/catalina.base_IS_UNDEFINED/logs/common-default.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/TestSpring.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticleCollect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticleCollect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticleComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticleComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticleCommentRely.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticleCommentRely.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticlePraise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ArticlePraise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Chat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/CompanyPicture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/CompanyPicture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/CompanyScale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/CompanyScale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Credential.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/EducationExperience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/EducationExperience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/FinancingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/FinancingStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Industry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Industry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Information.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/InternshipExperience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/InternshipExperience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Interview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterBrowse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterBrowse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/JobHunterReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionBrowse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionBrowse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionCollect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/PositionCollect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ProjectExperience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ProjectExperience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Province.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Recruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Recruiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Resume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/Resume.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/SocialHomepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/SocialHomepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/VolunteerExperience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/VolunteerExperience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/config/JpaMapperConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/AdministratorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/AdministratorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/ArticleCollectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/ArticleCollectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/dao/JobHunterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/dao/JobHunterMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/AdministratorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/service/impl/AdministratorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/utils/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ehcache-setting.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/InformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/InformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/RecruiterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/RecruiterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/df87929b1780b514f80312c6c8409b4620debd16227e78ffb47514ff08fd52bf_s.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/images/df87929b1780b514f80312c6c8409b4620debd16227e78ffb47514ff08fd52bf_s.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/优学派.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/images/优学派.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/3bd84cfc-b034-450b-b45b-5ed56736200a_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/3bd84cfc-b034-450b-b45b-5ed56736200a_debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/4ddb833a-14e3-42ee-9106-4fec26e84644_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/4ddb833a-14e3-42ee-9106-4fec26e84644_debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/6837eedc-69a1-48dc-adaa-d87baecbeb20_新建文本文档.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/6837eedc-69a1-48dc-adaa-d87baecbeb20_新建文本文档.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/a448fd85-528b-4b46-832b-7490d75ee622_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/a448fd85-528b-4b46-832b-7490d75ee622_debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/credential.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/credential.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/feeaff54-da7a-4cd3-8134-c00ce7a10716_download.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/feeaff54-da7a-4cd3-8134-c00ce7a10716_download.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/user.png" afterDir="false" />
     </list>
     <list id="c0ff6b04-e785-4b86-a7cf-487a6a7fee2d" name="second commit" comment="second commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,9 +152,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/lieying/menus" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -187,13 +163,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\java\lieying-server\src\main\java\org\lieying\menus" />
+      <recent name="D:\project\java\lieying-server\src\main\webapp\resources\static" />
       <recent name="D:\project\java\lieying-server\images" />
       <recent name="D:\project\java\lieying-server\src\main\resources" />
       <recent name="E:\project\java\lieying\target\lieying-1.0-SNAPSHOT\resources\uploads" />
-      <recent name="E:\project\java\lieying\src\main\webapp\resources\uploads" />
-      <recent name="E:\project\java\lieying\src\main\java\org\lieying\bean" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\java\lieying-server\src\main\webapp\resources" />
+      <recent name="D:\project\java\lieying-server\src\main\webapp\resources\static" />
       <recent name="E:\project\java\lieying\src\main\webapp\resources" />
       <recent name="E:\project\java\lieying\src\main\resources\mapper" />
     </key>
@@ -469,7 +447,7 @@
       <workItem from="1609826956605" duration="45730000" />
       <workItem from="1610028073078" duration="79797000" />
       <workItem from="1622000742869" duration="4763000" />
-      <workItem from="1622013459781" duration="2684000" />
+      <workItem from="1622013459781" duration="10715000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1600070288260</created>
@@ -579,7 +557,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java</url>
-          <line>65</line>
+          <line>76</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -594,7 +572,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CompanyController.java</url>
-          <line>81</line>
+          <line>100</line>
           <properties class="org.lieying.web.controller.CompanyController" method="getCompanyScales">
             <option name="EMULATED" value="true" />
           </properties>
@@ -602,7 +580,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java</url>
-          <line>70</line>
+          <line>89</line>
           <properties class="org.lieying.web.controller.JobHunterController" method="getResumeById">
             <option name="EMULATED" value="true" />
           </properties>

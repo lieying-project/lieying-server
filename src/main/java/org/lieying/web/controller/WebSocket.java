@@ -1,6 +1,7 @@
 package org.lieying.web.controller;
 
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.Api;
 import org.lieying.bean.Chat;
 import org.lieying.bean.JobHunter;
 import org.lieying.bean.Recruiter;
@@ -21,8 +22,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 //@CrossOrigin
+@Api(value = "WebSocket接口")
 @RestController
-
 @ServerEndpoint(value = "/websocket/{userId}/{userType}")
 public class WebSocket {
     private static ChatService chatService;

@@ -1,10 +1,11 @@
 package org.lieying.web.controller;
 
-import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.lieying.utils.FileUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,18 +13,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletContext;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
-import java.net.Inet4Address;
-import java.net.InetAddress;
-import java.net.URLEncoder;
-import java.net.UnknownHostException;
+
 import java.util.UUID;
 
+@Api(value = "文件信息接口",tags = "文件信息")
 @RestController
 @RequestMapping("/file")
 public class FileController {
+
+    @ApiOperation(value = "上传文件",notes="上传文件")
     @RequestMapping(value = "/upload", produces = "text/plain;charset=UTF-8")
     public String uploadFile(@RequestParam("file") MultipartFile file,
                              HttpServletRequest request) {
@@ -72,6 +73,11 @@ public class FileController {
 //    }
 
 
+
+    /*
+    * 下载文件
+    * */
+    @ApiOperation(value = "下载文件",notes="下载文件")
     @RequestMapping("/download")
     public ResponseEntity<byte[]> fileDownLoad(@RequestParam("file") String filename,
                                          @RequestHeader("User-Agent") String userAgent,

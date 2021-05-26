@@ -2,13 +2,14 @@ package org.lieying.bean;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Table(name = "city")
 @Data
-
+@NoArgsConstructor
 public class City {
     @Id
     @Column(name="city_id")

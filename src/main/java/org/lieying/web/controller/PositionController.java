@@ -2,6 +2,8 @@ package org.lieying.web.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import javafx.geometry.Pos;
 import org.lieying.bean.*;
 import org.lieying.service.PositionBrowseService;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 //@CrossOrigin
+@Api(value = "职位信息接口",tags = "职位信息")
 @RestController
 @RequestMapping(value = "/position")
 public class PositionController {
@@ -31,15 +34,13 @@ public class PositionController {
      * 职位详情
      * @param  positionId   职位id
      */
-    @RequestMapping(value = "/{positionId}", produces = "text/plain;charset=UTF-8")
+    @ApiOperation(value = "职位详情",notes = "职位详情")
+    @GetMapping(value = "/{positionId}", produces = "text/plain;charset=UTF-8")
     public String getPositionById(@PathVariable int positionId,HttpServletRequest request) {
         //long before = System.currentTimeMillis();
         Position position = positionService.queryDetailPositionById(positionId);
         //long after = System.currentTimeMillis();
         //System.out.println(after - before);
-
-
-
         return JSON.toJSONString(position);
     }
 
@@ -55,7 +56,7 @@ public class PositionController {
      *  @param   financingStageId     融资阶段id
      *  @param   positionPublishTime  职位发布时间
      */
-
+    @ApiOperation(value = "多条件搜索职位",notes = "多条件搜索职位")
     @RequestMapping(value = "", produces = "text/plain;charset=UTF-8")
     public String getPositionsByCriteria(@RequestParam(value = "keyword", required = false) String keyword,
                                          @RequestParam(value = "cityId", required = false) Integer cityId,
@@ -95,6 +96,7 @@ public class PositionController {
     *   @param   detail    详情
     *   @param   recruiterId 招聘者id
     * */
+    @ApiOperation(value = "添加职位",notes = "添加职位")
     @PostMapping(value = "/save",produces = "text/plain;charset=UTF-8")
     public String savePosition(@RequestBody Position position) {
         System.out.println(position);
@@ -105,6 +107,7 @@ public class PositionController {
     /*更新职位
     * @param position 职位信息
     * */
+    @ApiOperation(value = "更新职位",notes = "更新职位")
     @PostMapping(value = "/update",produces = "text/plain;charset=UTF-8")
     public String updatePosition(@RequestBody Position position){
         return JSON.toJSONString(positionService.updatePosition(position));
@@ -113,6 +116,7 @@ public class PositionController {
     * 删除职位
     * @param id 职位ID
     * */
+    @ApiOperation(value = "删除职位",notes = "删除职位")
     @RequestMapping(value = "/delete",produces = "text/plain;charset=UTF-8")
     public String deletePosition(@RequestParam("id") Integer id){
         System.out.println(id);
@@ -126,6 +130,7 @@ public class PositionController {
     *   @param positionCategoryId 职位类型id
     *
      */
+    @ApiOperation(value = "热门职位",notes = "热门职位")
     @RequestMapping(value = "/hot",produces = "text/plain;charset=UTF-8")
     public String hotPositions(@RequestParam("cityId") int cityId,@RequestParam("positionCategoryId")int positionCategoryId){
         //System.out.println("hot");
@@ -135,6 +140,7 @@ public class PositionController {
      *  查询所有职位类型
      *
      */
+    @ApiOperation(value = "查询所有职位类型",notes = "查询所有职位类型")
     @RequestMapping(value = "/category/all",produces = "text/plain;charset=UTF-8")
     public String getAllPositionCategories(){
         return JSON.toJSONString(positionCategoryService.queryAllPositionCategories());
@@ -143,6 +149,7 @@ public class PositionController {
     /*
     *  收藏职位
     * */
+    @ApiOperation(value = "收藏职位",notes = "收藏职位")
     @PostMapping(value = "/collect/save",produces = "text/plain;charset=UTF-8")
     public String savePositionCollect(@RequestBody PositionCollect positionCollect){
         return JSON.toJSONString(positionCollectService.addPositionCollect(positionCollect));
@@ -151,11 +158,16 @@ public class PositionController {
     *  删除职位收藏信息
     *
     * */
+    @ApiOperation(value = "删除职位收藏信息",notes = "删除职位收藏信息")
     @PostMapping(value = "/collect/delete/{id}",produces = "text/plain;charset=UTF-8")
         public String deletePositionCollect(@PathVariable int id){
         return JSON.toJSONString(positionCollectService.removePositionCollect(id));
     }
 
+    /*
+    * 保存职位浏览信息
+    * */
+    @ApiOperation(value = "保存职位浏览信息",notes = "保存职位浏览信息")
     @PostMapping(value = "/browse/save",produces = "text/plain;charset-UTF-8")
     public String savePositionBrowse(@RequestBody PositionBrowse positionBrowse){
         return JSON.toJSONString(positionBrowseService.addPositionBrowse(positionBrowse));
@@ -164,6 +176,7 @@ public class PositionController {
      *  根据求职者id搜索浏览的职位信息
      *  @Param jobHunterId 求职者id
      * */
+    @ApiOperation(value = "根据求职者id搜索浏览的职位信息",notes = "根据求职者id搜索浏览的职位信息")
     @GetMapping(value = "/browse/{jobHunterId}",produces = "text/plain;charset=UTF-8")
     public String getBrowsedPositionsByJobHunterId(@PathVariable int jobHunterId){
         return JSON.toJSONString(positionService.queryBrowsedPositionsByJobHunterId(jobHunterId));
@@ -171,6 +184,7 @@ public class PositionController {
     /*
      *  推荐职位
      */
+    @ApiOperation(value = "推荐职位",notes = "推荐职位")
     @RequestMapping(value = "/recommend",produces = "text/plain;charset=UTF-8")
     public String recommendPosition(@RequestParam("jobHunterId") Integer jobHunterId){
         return JSON.toJSONString(positionService.recomendPosition(jobHunterId));
