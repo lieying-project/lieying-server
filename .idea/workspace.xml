@@ -12,35 +12,22 @@
     <list default="true" id="f9719495-74f7-44ad-8140-d97fbd3e8d83" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/CommonResult.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/ResultEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/config/StaticResourceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lieying/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/bean/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/bean/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/AdministratorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/InformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/InformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/JobHunterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/PositionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/RecruiterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/RecruiterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lieying/web/controller/ResourceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/df87929b1780b514f80312c6c8409b4620debd16227e78ffb47514ff08fd52bf_s.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/images/df87929b1780b514f80312c6c8409b4620debd16227e78ffb47514ff08fd52bf_s.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/优学派.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/images/优学派.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/3bd84cfc-b034-450b-b45b-5ed56736200a_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/3bd84cfc-b034-450b-b45b-5ed56736200a_debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/4ddb833a-14e3-42ee-9106-4fec26e84644_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/4ddb833a-14e3-42ee-9106-4fec26e84644_debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/6837eedc-69a1-48dc-adaa-d87baecbeb20_新建文本文档.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/6837eedc-69a1-48dc-adaa-d87baecbeb20_新建文本文档.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/a448fd85-528b-4b46-832b-7490d75ee622_debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/a448fd85-528b-4b46-832b-7490d75ee622_debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/credential.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/credential.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/feeaff54-da7a-4cd3-8134-c00ce7a10716_download.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/feeaff54-da7a-4cd3-8134-c00ce7a10716_download.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/uploads/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/images/df87929b1780b514f80312c6c8409b4620debd16227e78ffb47514ff08fd52bf_s.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/df87929b1780b514f80312c6c8409b4620debd16227e78ffb47514ff08fd52bf_s.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/images/优学派.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/优学派.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/3bd84cfc-b034-450b-b45b-5ed56736200a_debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/4ddb833a-14e3-42ee-9106-4fec26e84644_debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/6837eedc-69a1-48dc-adaa-d87baecbeb20_新建文本文档.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/a448fd85-528b-4b46-832b-7490d75ee622_debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/credential.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/feeaff54-da7a-4cd3-8134-c00ce7a10716_download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/static/uploads/user.png" beforeDir="false" />
     </list>
     <list id="c0ff6b04-e785-4b86-a7cf-487a6a7fee2d" name="second commit" comment="second commit" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,22 +139,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/org/lieying/menus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\java\lieying-server\src\main\resources\static" />
+      <recent name="D:\project\java\lieying-server\src\main\java\org\lieying\bean" />
       <recent name="D:\project\java\lieying-server\src\main\java\org\lieying\menus" />
       <recent name="D:\project\java\lieying-server\src\main\webapp\resources\static" />
       <recent name="D:\project\java\lieying-server\images" />
-      <recent name="D:\project\java\lieying-server\src\main\resources" />
-      <recent name="E:\project\java\lieying\target\lieying-1.0-SNAPSHOT\resources\uploads" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\java\lieying-server\src\main\webapp\resources" />
@@ -447,7 +434,10 @@
       <workItem from="1609826956605" duration="45730000" />
       <workItem from="1610028073078" duration="79797000" />
       <workItem from="1622000742869" duration="4763000" />
-      <workItem from="1622013459781" duration="10715000" />
+      <workItem from="1622013459781" duration="12345000" />
+      <workItem from="1622103831005" duration="23000" />
+      <workItem from="1622210481976" duration="549000" />
+      <workItem from="1622211116220" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1600070288260</created>

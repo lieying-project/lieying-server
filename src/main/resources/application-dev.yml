@@ -11,10 +11,6 @@ spring:
     url: jdbc:mysql://localhost:3306/lieying?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 123456
-  thymeleaf:
-    prefix: classpath:/templates
-    mode: HTML5
-    encoding: UTF-8
   devtools:
     restart:
       enabled: true
