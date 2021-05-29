@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.lieying.bean.Chat;
 import org.lieying.bean.JobHunter;
 import org.lieying.bean.Recruiter;
+import org.lieying.core.CommonResult;
+import org.lieying.core.ResultGenerator;
 import org.lieying.service.ChatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +28,9 @@ public class ChatController {
     * 根据求职者编号和招聘者编号查询聊天信息
     * */
     @ApiOperation(value = "根据求职者编号和招聘者编号查询聊天信息",notes = "根据求职者编号和招聘者编号查询聊天信息")
-    @RequestMapping("/{jobHunterId}/{recruiterId}")
-    public String getChatsByJobHunterIdAndRecruiterId(@PathVariable int jobHunterId,
-                                                      @PathVariable int recruiterId){
+    @GetMapping("/{jobHunterId}/{recruiterId}")
+    public CommonResult getChatsByJobHunterIdAndRecruiterId(@PathVariable int jobHunterId,
+                                                            @PathVariable int recruiterId){
         List<Chat> chats=chatService.findChatsByJobHunterIdAndRecruiterId(jobHunterId,recruiterId);
         for (Chat chat:chats){
             Chat chat1=new Chat();
@@ -41,44 +43,44 @@ public class ChatController {
 
         }
         System.out.println(chats);
-        return JSON.toJSONString(chats);
+        return ResultGenerator.genSuccessfulResult(chats);
     }
 
     /*
     * 根据求职者编号查询聊天信息
     * */
     @ApiOperation(value = "根据求职者编号查询聊天信息",notes = "根据求职者编号查询聊天信息")
-    @RequestMapping(value="/jobHunter/{jobHunterId}", produces = "text/plain;charset=UTF-8")
-    public String getChatsByJobHunterId(@PathVariable int jobHunterId){
+    @GetMapping(value="/jobHunter/{jobHunterId}")
+    public CommonResult getChatsByJobHunterId(@PathVariable int jobHunterId){
         List<Chat> chats=chatService.findChatsByJobHunterId(jobHunterId);
         for (Chat chat:chats){
             chat.getRecruiter();
             chat.getJobHunter();
         }
         System.out.println(chats);
-        return JSON.toJSONString(chats);
+        return ResultGenerator.genSuccessfulResult(chats);
     }
 
     /*
      * 根据招聘者编号查询聊天信息
      * */
     @ApiOperation(value = "根据招聘者编号查询聊天信息",notes = "根据招聘者编号查询聊天信息")
-    @RequestMapping(value="/recruiter/{recruiterId}",produces = "text/plain;charset=UTF-8")
-    public String getChatsByRecruiterId(@PathVariable int recruiterId){
+    @GetMapping(value="/recruiter/{recruiterId}")
+    public CommonResult getChatsByRecruiterId(@PathVariable int recruiterId){
         List<Chat> chats=chatService.findChatsByRecruiterId(recruiterId);
         for (Chat chat:chats){
             chat.getRecruiter();
             chat.getJobHunter();
         }
         System.out.println(chats);
-        return JSON.toJSONString(chats);
+        return ResultGenerator.genSuccessfulResult(chats);
     }
 
     /*
     * 根据求职者编号查询招聘者信息
     * */
     @ApiOperation(value = "根据求职者编号查询招聘者信息",notes = "根据求职者编号查询招聘者信息")
-    @RequestMapping(value="/jobHunter/{jobHunterId}/recruiters", produces = "text/plain;charset=UTF-8")
+    @GetMapping(value="/jobHunter/{jobHunterId}/recruiters")
     public String getChatRecruitersByJobHunterId(@PathVariable int jobHunterId){
         List<Chat> chats=chatService.findChatsByJobHunterId(jobHunterId);
         List<Recruiter> recruiters=new ArrayList<>();
@@ -96,8 +98,8 @@ public class ChatController {
      * 根据招聘者编号查询求职者信息
      * */
     @ApiOperation(value = "根据招聘者编号查询求职者信息",notes = "根据招聘者编号查询求职者信息")
-    @RequestMapping(value="/recruiter/{recruiterId}/jobHunters",produces = "text/plain;charset=UTF-8")
-    public String getChatJobHuntersByRecruiterId(@PathVariable int recruiterId){
+    @GetMapping(value="/recruiter/{recruiterId}/jobHunters")
+    public CommonResult getChatJobHuntersByRecruiterId(@PathVariable int recruiterId){
         List<Chat> chats=chatService.findChatsByRecruiterId(recruiterId);
         List<JobHunter> jobHunters=new ArrayList<>();
         Set<Integer> ids=new HashSet<>();
@@ -108,15 +110,15 @@ public class ChatController {
             }
         }
         System.out.println(jobHunters);
-        return JSON.toJSONString(jobHunters);
+        return ResultGenerator.genSuccessfulResult(jobHunters);
     }
 
     /*
     * 保存聊天信息
     * */
     @ApiOperation(value = "保存聊天信息",notes = "保存聊天信息")
-    @RequestMapping(value="/save",produces = "text/plain;charset=UTF-8")
-    public String saveChat(@RequestBody Chat chat){
-        return JSON.toJSONString(chatService.addChat(chat));
+    @PostMapping(value="/save")
+    public CommonResult saveChat(@RequestBody Chat chat){
+        return ResultGenerator.genEditSuccessfulResult(chatService.addChat(chat));
     }
 }

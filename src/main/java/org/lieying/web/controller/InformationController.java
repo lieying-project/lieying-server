@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.lieying.bean.Information;
+import org.lieying.core.CommonResult;
+import org.lieying.core.ResultGenerator;
 import org.lieying.service.InformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +25,9 @@ public class InformationController {
      *
      */
     @ApiOperation(value = "查询所有资讯",notes = "查询所有资讯")
-    @RequestMapping(value = "/all",produces = "text/plain;charset=UTF-8")
-    public String getAllInformations(){
-        return JSON.toJSONString(informationService.queryAllInformations());
+    @GetMapping(value = "/all")
+    public CommonResult getAllInformations(){
+        return ResultGenerator.genSuccessfulResult(informationService.queryAllInformations());
     }
 
     /*
@@ -35,9 +37,9 @@ public class InformationController {
     @ApiImplicitParams(
             @ApiImplicitParam(value = "id",name = "咨询编号",required = true,paramType = "INTEGER")
     )
-    @RequestMapping(value = "/{id}",produces = "text/plain;charset=UTF-8")
-    public String getInformationById(@PathVariable int id){
-        return JSON.toJSONString(informationService.queryDetailInformationById(id));
+    @GetMapping(value = "/{id}")
+    public CommonResult getInformationById(@PathVariable int id){
+        return  ResultGenerator.genSuccessfulResult(informationService.queryDetailInformationById(id));
     }
 
     /*
@@ -45,9 +47,9 @@ public class InformationController {
     * 保存资讯信息
     * */
     @ApiOperation(value = "保存资讯信息",notes = "保存资讯信息")
-    @PostMapping(value = "/save",produces = "text/plain;charset=UTF-8")
-    public String saveInformation(@RequestBody Information information){
-        return JSON.toJSONString(informationService.addInformation(information));
+    @PostMapping(value = "/save")
+    public CommonResult saveInformation(@RequestBody Information information){
+        return ResultGenerator.genEditSuccessfulResult(informationService.addInformation(information));
     }
 
 }

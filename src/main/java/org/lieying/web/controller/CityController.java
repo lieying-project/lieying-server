@@ -4,12 +4,11 @@ import com.alibaba.fastjson.JSON;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.lieying.bean.City;
+import org.lieying.core.CommonResult;
+import org.lieying.core.ResultGenerator;
 import org.lieying.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 //@CrossOrigin
@@ -24,27 +23,27 @@ public class CityController {
      *    查询所有城市
      */
     @ApiOperation(value = "查询所有城市",notes = "查询所有城市")
-    @RequestMapping(value = "/all", produces = "text/plain;charset=UTF-8")
-    public String getAllCities() {
-        return JSON.toJSONString(cityService.queryAllCities());
+    @GetMapping(value = "/all")
+    public CommonResult getAllCities() {
+        return ResultGenerator.genSuccessfulResult(cityService.queryAllCities());
     }
     /*
      *   根据多个拼首字母查询城市
      *   @param charStrs  多个字母拼接的字符串,如 characters="ABCD",则会查询出分别以A、B、C、D开头的城市信息
      */
     @ApiOperation(value = "根据多个拼首字母查询城市",notes = "根据多个拼首字母查询城市")
-    @RequestMapping(value = "/characters/{characters}", produces = "text/plain;charset=UTF-8")
-    public String getCitiesByFirstCharacter(@PathVariable String characters) {
-        return JSON.toJSONString(cityService.queryCitiesByMultipleCharacter(characters));
+    @GetMapping(value = "/characters/{characters}")
+    public CommonResult getCitiesByFirstCharacter(@PathVariable String characters) {
+        return ResultGenerator.genSuccessfulResult(cityService.queryCitiesByMultipleCharacter(characters));
     }
     /*
     *  查询热门城市
     *
     */
     @ApiOperation(value = "查询热门城市",notes = "查询热门城市")
-    @RequestMapping(value = "/hot", produces = "text/plain;charset=UTF-8")
-    public String getHotCities() {
-        return JSON.toJSONString(cityService.queryHotCities());
+    @GetMapping(value = "/hot")
+    public CommonResult getHotCities() {
+        return ResultGenerator.genSuccessfulResult(cityService.queryHotCities());
     }
 
 }

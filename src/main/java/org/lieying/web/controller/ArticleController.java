@@ -1,15 +1,13 @@
 package org.lieying.web.controller;
-
-import com.alibaba.fastjson.JSON;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.lieying.bean.*;
+import org.lieying.core.CommonResult;
+import org.lieying.core.ResultGenerator;
 import org.lieying.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 //@CrossOrigin
 @Api(value = "文章信息接口", tags = "文章信息")
@@ -29,9 +27,9 @@ public class ArticleController {
 
     //文章详情
     @ApiOperation(value = "文章详情", notes = "文章详情")
-    @RequestMapping(value = "/{articleId}", produces = "text/plain;charset=UTF-8")
-    public String articleDetail(@PathVariable int articleId) {
-        return JSON.toJSONString(articleService.queryDetailArticleById(articleId));
+    @GetMapping(value = "/{articleId}")
+    public CommonResult articleDetail(@PathVariable int articleId) {
+        return ResultGenerator.genSuccessfulResult(articleService.queryDetailArticleById(articleId));
     }
 
     //    @RequestMapping("/{articleId}/comments")
@@ -45,18 +43,18 @@ public class ArticleController {
      *
      */
     @ApiOperation(value = "查询求职者发表的所有文章", notes = "查询求职者发表的所有文章")
-    @RequestMapping(value = "/list/{jobHunterId}", produces = "text/plain;charset=UTF-8")
-    public String getArticlesByJobHunterId(@PathVariable int jobHunterId) {
-        return JSON.toJSONString(articleService.queryArticlesByJobHunterId(jobHunterId));
+    @GetMapping(value = "/list/{jobHunterId}")
+    public CommonResult getArticlesByJobHunterId(@PathVariable int jobHunterId) {
+        return ResultGenerator.genSuccessfulResult(articleService.queryArticlesByJobHunterId(jobHunterId));
     }
 
     /*
     * 分页查询所有文章
     * */
     @ApiOperation(value = "分页查询所有文章", notes = "分页查询所有文章")
-    @RequestMapping(value = "/list", produces = "text/plain;charset=utf-8")
-    public String getAllArticlesByPage(@RequestParam(value = "page", required = false) Integer page) {
-        return JSON.toJSONString(articleService.queryAllArticlesByPage(page));
+    @GetMapping(value = "/list")
+    public CommonResult getAllArticlesByPage(@RequestParam(value = "page", required = false) Integer page) {
+        return ResultGenerator.genSuccessfulResult(articleService.queryAllArticlesByPage(page));
     }
 
 
@@ -64,9 +62,9 @@ public class ArticleController {
     * 保存文章评论
     * */
     @ApiOperation(value = "保存文章评论", notes = "保存文章评论")
-    @PostMapping(value = "/comment/save", produces = "text/plain;charset=UTF-8")
-    public String saveArticleCommentRely(@RequestBody ArticleComment articleComment) {
-        return JSON.toJSONString(articleCommentService.addArticleComment(articleComment));
+    @PostMapping(value = "/comment/save")
+    public CommonResult saveArticleCommentRely(@RequestBody ArticleComment articleComment) {
+        return ResultGenerator.genEditSuccessfulResult(articleCommentService.addArticleComment(articleComment));
     }
 
 
@@ -75,9 +73,9 @@ public class ArticleController {
      * 保存评论回复
      * */
     @ApiOperation(value = "保存评论回复", notes = "保存评论回复")
-    @PostMapping(value = "/comment/rely/save", produces = "text/plain;charset=UTF-8")
-    public String saveArticleCommentRely(@RequestBody ArticleCommentRely articleCommentRely) {
-        return JSON.toJSONString(articleCommentRelyService.addArticleCommentRely(articleCommentRely));
+    @PostMapping(value = "/comment/rely/save")
+    public CommonResult saveArticleCommentRely(@RequestBody ArticleCommentRely articleCommentRely) {
+        return ResultGenerator.genEditSuccessfulResult(articleCommentRelyService.addArticleCommentRely(articleCommentRely));
     }
 
 
@@ -85,9 +83,9 @@ public class ArticleController {
      * 点赞文章
      * */
     @ApiOperation(value = "点赞文章", notes = "点赞文章")
-    @PostMapping(value = "/praise/save", produces = "text/plain;charset=UTF-8")
-    public String saveArticlePraise(@RequestBody ArticlePraise articlePraise) {
-        return JSON.toJSONString(articlePraiseService.addArticlePraise(articlePraise));
+    @PostMapping(value = "/praise/save")
+    public CommonResult saveArticlePraise(@RequestBody ArticlePraise articlePraise) {
+        return ResultGenerator.genEditSuccessfulResult(articlePraiseService.addArticlePraise(articlePraise));
     }
 
 
@@ -96,18 +94,18 @@ public class ArticleController {
      * 取消点赞文章
      * */
     @ApiOperation(value = "取消点赞文章", notes = "取消点赞文章")
-    @PostMapping(value = "/praise/delete/{id}", produces = "text/plain;charset=UTF-8")
-    public String deleteArticlePraise(@PathVariable int id) {
-        return JSON.toJSONString(articlePraiseService.removeArticlePraise(id));
+    @DeleteMapping(value = "/praise/delete/{id}")
+    public CommonResult deleteArticlePraise(@PathVariable int id) {
+        return ResultGenerator.genDeleteSuccessfulResult(articlePraiseService.removeArticlePraise(id));
     }
 
     /*
      * 收藏文章
      * */
     @ApiOperation(value = "收藏文章", notes = "收藏文章")
-    @PostMapping(value = "/collect/save", produces = "text/plain;charset=UTF-8")
-    public String saveArticleCollect(@RequestBody ArticleCollect articleCollect) {
-        return JSON.toJSONString(articleCollectService.addArticleCollect(articleCollect));
+    @PostMapping(value = "/collect/save")
+    public CommonResult saveArticleCollect(@RequestBody ArticleCollect articleCollect) {
+        return ResultGenerator.genEditSuccessfulResult(articleCollectService.addArticleCollect(articleCollect));
     }
 
 
@@ -115,9 +113,9 @@ public class ArticleController {
      * 取消收藏文章
      * */
     @ApiOperation(value = "取消收藏文章", notes = "取消收藏文章")
-    @PostMapping(value = "/collect/delete/{id}", produces = "text/plain;charset=UTF-8")
-    public String deleteArticleCollect(@PathVariable int id) {
-        return JSON.toJSONString(articleCollectService.removeArticleCollect(id));
+    @DeleteMapping(value = "/collect/delete/{id}")
+    public CommonResult deleteArticleCollect(@PathVariable int id) {
+        return ResultGenerator.genDeleteSuccessfulResult(articleCollectService.removeArticleCollect(id));
     }
 
 
@@ -126,10 +124,10 @@ public class ArticleController {
      * 保存文章
      * */
     @ApiOperation(value = "保存文章", notes = "保存文章")
-    @PostMapping(value = "/save", produces = "text/plain;charset=utf-8")
-    public String saveArticle(@RequestBody Article article) {
+    @PostMapping(value = "/save")
+    public CommonResult saveArticle(@RequestBody Article article) {
         // System.out.println("articleComment:"+articleComment);
-        return JSON.toJSONString(articleService.addArticle(article));
+        return ResultGenerator.genEditSuccessfulResult(articleService.addArticle(article));
     }
 //    @PostMapping(value = "/save",produces = "text/plain;charset=UTF-8")
 //    public String saveArticle(@RequestBody Article article){
